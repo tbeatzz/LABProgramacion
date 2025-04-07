@@ -1,0 +1,104 @@
+
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* estilos generales */
+
+code{
+    font-family: 'Courier New', Courier, monospace;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+a:hover{
+    transition: .5s;
+    color: blueviolet;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+/* estilos indice */
+ol{
+    padding: 1em;
+}
+ol>li{
+    padding: .2em 0;
+}
+ol > li> a{
+    color: #212121;
+}
+
+
+/*estilo header */
+
+header{
+    text-align: center;
+    padding: 1em;
+}
+header > h1 > strong{
+    font-size: 2em;
+    font-weight: 800;
+    /* text-transform: uppercase; */
+}
+
+/* contenido textos */
+#contenido{
+    margin: 0 2em;
+}
+
+#contenido > h2{
+    font-weight: 600;
+    font-size: 2em;
+    text-decoration: none;
+}
+#contenido > h2 > em{
+    font-size: .5em;
+    color: rgb(37, 37, 37);
+}
+#contenido > p{
+    padding: .7em 0em;   
+    text-align: justify;
+    /* margin: 0 .5; */
+    font-size: 1.2em;
+    font-weight: 500;
+
+}
+
+/* footer */
+
+footer > p{
+
+    text-align: center;
+}
+footer > p > a{
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #212121;
+}
+
+footer>nav>ul{
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    /* background-color: #ff0000; */
+}
+
+footer>nav>ul>li{
+    display: inline;     
+}
+
+footer li>a{
+    width: 100%;
+    padding: 1em;
+    color: black;
+    /* background-color: aliceblue; */
+}
