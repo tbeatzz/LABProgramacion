@@ -18,78 +18,91 @@
 
     <link rel="stylesheet" type="text/css" href="./css/estilos.css" />
 
-    <link rel="prev" href="css.html">
-    <link rel="index" href="index.html">
-    <link rel="next" href="php.html">
-
+    <link rel="prev" href="css.html" />
+    <link rel="index" href="index.html" />
+    <link rel="next" href="php.html" />
   </head>
   <body>
-    <header>
+    <header id="header">
       <h1><strong>El Lenguaje JavaScript</strong></h1>
     </header>
 
     <main>
-      <section id="contenido">
-        <h2>JavaScript <em>(abreviado comúnmente "JS")</em></h2>
-        <p>
-          Es un lenguaje de programación
-          interpretado, dialecto del estándar ECMAScript. Se define como
-          orientado a objetos,3 basado en prototipos, imperativo, débilmente
-          tipado y dinámico.
-        </p>
+      <section id="informacion">
+        <div class="informacionTitulo">
+          <h2>JavaScript <em>(abreviado comúnmente "JS")</em></h2>
+        </div>
 
-        <p>
-          Se utiliza principalmente en su forma del lado del cliente
-          (client-side), implementado como parte de un navegador web permitiendo
-          mejoras en la interfaz de usuario y páginas web dinámicas4 aunque
-          existe una forma de JavaScript del lado del servidor (Server-side
-          JavaScript o SSJS). Su uso en aplicaciones externas a la web, por
-          ejemplo en documentos PDF, aplicaciones de escritorio
-          (mayoritariamente widgets) es también significativo.
-        </p>
+        <div class="informacionTexto">
+          <p>
+            <strong>JavaScript</strong> es un
+            <strong>lenguaje de programación interpretado</strong>, dialecto del
+            estándar <strong>ECMAScript</strong>. Se define como orientado a
+            objetos, basado en prototipos, imperativo,
+            <strong>débilmente tipado</strong> y <strong>dinámico</strong>.
+          </p>
 
-        <p>
-          JavaScript se diseñó con una sintaxis similar al C, aunque adopta
-          nombres y convenciones del lenguaje de programación Java. Sin embargo
-          Java y JavaScript no están relacionados y tienen semánticas y
-          propósitos diferentes.
-        </p>
-        <p>
-          Todos los navegadores modernos interpretan el código JavaScript
-          integrado en las páginas web. Para interactuar con una página web se
-          provee al lenguaje JavaScript de una implementación del Document
-          Object Model (DOM).
-        </p>
-        <p>
-          Tradicionalmente se venía utilizando en páginas web HTML para realizar
-          operaciones y únicamente en el marco de la aplicación cliente, sin
-          acceso a funciones del servidor. JavaScript se interpreta en el agente
-          de usuario, al mismo tiempo que las sentencias van descargándose junto
-          con el código HTML.
-        </p>
+          <p>
+            Se utiliza principalmente en su forma del
+            <strong>lado del cliente (client-side)</strong>, implementado como
+            parte de un navegador web, permitiendo mejoras en la
+            <strong>interfaz de usuario</strong> y la creación de
+            <strong>páginas web dinámicas</strong>. Aunque existe una forma de
+            <strong>JavaScript del lado del servidor</strong> (Server-side
+            JavaScript o SSJS), su uso en aplicaciones externas a la web, como
+            documentos PDF o aplicaciones de escritorio (mayoritariamente
+            widgets), también es significativo.
+          </p>
+
+          <p>
+            JavaScript se diseñó con una sintaxis similar al lenguaje
+            <strong>C</strong>, aunque adopta nombres y convenciones del
+            lenguaje de programación <strong>Java</strong>. Sin embargo,
+            <strong>Java y JavaScript no están relacionados</strong> y tienen
+            semánticas y propósitos diferentes.
+          </p>
+
+          <p>
+            Todos los <strong>navegadores modernos</strong> interpretan el
+            código JavaScript integrado en las páginas web. Para interactuar con
+            una página web, se provee al lenguaje JavaScript de una
+            implementación del <strong>Document Object Model (DOM)</strong>.
+          </p>
+
+          <p>
+            Tradicionalmente, se venía utilizando en páginas web HTML para
+            realizar operaciones únicamente en el marco de la
+            <strong>aplicación cliente</strong>, sin acceso a funciones del
+            servidor. JavaScript se interpreta en el
+            <strong>agente de usuario</strong>, al mismo tiempo que las
+            sentencias van descargándose junto con el código HTML.
+          </p>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <p>
-        <a
-          href="https://es.wikipedia.org/wiki/JavaScript"
-          target="_blank"
-          title="Ver artículo de Wikipedia sobre JavaScript"
-        >
-          Información extraída desde Wikipedia
-        </a>
-      </p>
+    <footer id="footer">
+      <div class="footerFuente">
+        <p>
+          <cite>
+            <a
+              href="https://es.wikipedia.org/wiki/JavaScript"
+              target="_blank"
+              title="Ver artículo de Wikipedia sobre JavaScript"
+            >
+              Información extraída desde Wikipedia
+            </a>
+          </cite>
+        </p>
+      </div>
 
-      <nav>
+      <nav class="footerNav">
         <ul>
           <li><a rel="prev" href="css.html">Anterior</a></li>
           <li><a rel="index" href="index.html">Índice</a></li>
           <li><a rel="next" href="php.html">Siguiente</a></li>
         </ul>
       </nav>
-      
-      
     </footer>
-  </body> 
+  </body>
 </html>

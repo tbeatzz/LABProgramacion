@@ -19,62 +19,75 @@
     <title>Práctica sobre CSS</title>
 
     <link rel="stylesheet" type="text/css" href="./css/estilos.css" />
-  
-    <link rel="prev" href="html.html">
-    <link rel="index" href="index.html">
-    <link rel="next" href="javascript.html">
 
+    <link rel="prev" href="html.html" />
+    <link rel="index" href="index.html" />
+    <link rel="next" href="javascript.html" />
   </head>
 
   <body>
-    <header>
-      <h1 title="titulo pricipal, hojas de estilo en cascada - css"> <strong>Hojas de Estilo en Cascada - CSS</strong></h1>
+    <header id="header">
+      <h1 title="titulo pricipal, hojas de estilo en cascada - css">
+        Hojas de Estilo en Cascada - CSS
+      </h1>
     </header>
 
     <main>
-      <section id="contenido">
-        <h2>Hojas de Estilo en Cascada <em>(Cascading Style Sheets)</em></h2>
-        
-        <p>
-          Es el lenguaje de hojas de estilo utilizado para <strong>describir el aspecto
-          y el formato</strong> de un documento escrito en un lenguaje de marcas, esto
-          incluye varios lenguajes basados en <strong>XML</strong> <em>como son XHTML o SVG.</em>
-        </p>
+      <section id="informacion">
+        <div class="informacionTitulo">
+          <h2>Hojas de Estilo en Cascada <em>(Cascading Style Sheets)</em></h2>
+        </div>
 
-        <p>
-          La información de estilo puede ser adjuntada como un documento
-          separado o en el mismo <strong>documento HTML.</strong> En este último caso podrían
-          definirse estilos generales en la cabecera del documento o en cada
-          etiqueta particular mediante el atributo <code>style</code>.
-        </p>
+        <div class="informacionTexto">
+          <p>
+            Es el lenguaje de hojas de estilo utilizado para
+            <strong>describir el aspecto y el formato</strong> de un documento
+            escrito en un lenguaje de marcas, esto incluye varios lenguajes
+            basados en <strong>XML</strong> <em>como son XHTML o SVG.</em>
+          </p>
 
-        <p>
-          Las especificaciones de <strong>CSS</strong> son mantenidos por <em>el Consorcio World Wide Web</em> 
-          <strong>(W3C)</strong>. Tipo de medio de Internet (<strong>tipo MIME</strong> ) <code>text/css</code> está
-          registrado para su uso con <strong>CSS</strong> por <strong>RFC 2318</strong> <em>(marzo de 1998)</em>,  y también
-          opera un libre servicio de validación de CSS.
-        </p>
+          <p>
+            La información de estilo puede ser adjuntada como un documento
+            separado o en el mismo <strong>documento HTML.</strong> En este
+            último caso podrían definirse estilos generales en la cabecera del
+            documento o en cada etiqueta particular mediante el atributo
+            <code>style</code>.
+          </p>
+
+          <p>
+            Las especificaciones de <strong>CSS</strong> son mantenidos por
+            <em>el Consorcio World Wide Web</em> <strong>(W3C)</strong>. Tipo de
+            medio de Internet (<strong>tipo MIME</strong> )
+            <code>text/css</code> está registrado para su uso con
+            <strong>CSS</strong> por <strong>RFC 2318</strong>
+            <em>(marzo de 1998)</em>, y también opera un libre servicio de
+            validación de CSS.
+          </p>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <p>
-        <a
-          href="https://es.wikipedia.org/wiki/Hoja_de_estilos_en_cascada"
-          target="_blank"
-          title="Ver artículo de Wikipedia sobre CSS"
-        >
-          Información extraída desde Wikipedia
-        </a>
-      </p>
+    <footer id="footer">
+      <div class="footerFuente">
+        <p>
+          <cite>
+            <a
+              href="https://es.wikipedia.org/wiki/Hoja_de_estilos_en_cascada"
+              target="_blank"
+              title="Ver artículo de Wikipedia sobre CSS"
+              >Información extraída desde Wikipedia</a
+            ></cite
+          >
+        </p>
+      </div>
 
-      <nav>
+      <nav class="footerNav">
         <ul>
           <li><a rel="prev" href="html.html">Anterior</a></li>
           <li><a rel="index" href="index.html">Índice</a></li>
           <li><a rel="next" href="javascript.html">Siguiente</a></li>
         </ul>
-      </nav>      
+      </nav>
     </footer>
   </body>
 </html>
