@@ -4,29 +4,40 @@ body {
 }
 
 table {
-
     border-collapse: collapse;
-    margin-top: 10px;
-}
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-size: .7em;
 
-th, td {
-    border: 1px solid rgb(102, 102, 102);
-    padding: 8px;
     text-align: center;
 }
 
+caption {
+    caption-side: top;
+    margin-bottom: 1em;
+}
 
+caption p {
+    margin: 0;
+    font-size: 1em;
+    text-align: center;
+}
+
+caption a {
+    color: #4b0082;
+    text-decoration: underline;
+}
 
 th {
-    background-color: #acacac;
-    font-weight: bold;
+    background-color: rgb(235, 235, 235);
 }
 
-tbody > tr:nth-child(2n+1){
-    background-color: #f2f2f2;
+td, th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px 20px;
 }
 
-
-p {
-    text-align: center;
+tr:nth-child(odd) td {
+    background-color: rgb(245, 245, 245);
 }
+

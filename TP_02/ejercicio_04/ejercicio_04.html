@@ -11,22 +11,28 @@
     <link rel="stylesheet" type="text/css" href="./css/ejercicio_04.css">
 </head>
 
-<body>
+<body> 
 
-    <table>
+    <h1>Datos de planeta</h1>
+
+    <table border="1">
         <caption><p>Datos sobre los planetas de nuestro sistema solar (Datos planetarios tomados de <a href="">la hoja de datos
             planetarios de la NASA - Metrica</a> )</p></caption>
-    
+        <colgroup>
+            <col span="2">
+            <col style="border: 2px solid black;">
+            <col span="9">
+        </colgroup>   
         <thead>
             <tr>
-                <th colspan="2"></th>
+                <td colspan="2"></td>
                 <th>Nombre</th>
-                <th>Masa (10^24 kg)</th>
+                <th>Masa (10 <sup>24</sup>kg)</th>
                 <th>Diámetro (km)</th>
-                <th>Densidad (kg/m³)</th>
-                <th>Gravedad (m/s²)</th>
+                <th>Densidad (kg/m <sup>3</sup> )</th>
+                <th>Gravedad (m/s <sup>2</sup>)</th>
                 <th>Duración del día (horas)</th>
-                <th>Distancia al sol (10,6 km)</th>
+                <th>Distancia al sol (10 <sup>6</sup> km)</th>
                 <th>Temperatura media (°C)</th>
                 <th>Número de lunas</th>
                 <th>Notas</th>
@@ -83,8 +89,8 @@
                 <td>El planeta rojo</td>
             </tr>
             <tr>
-                <td rowspan="4">Planetas jovianos</td>
-                <td rowspan="2"> Gigantes gaseosos</td>         
+                <th rowspan="4">Planetas jovianos</th>
+                <th rowspan="2"> Gigantes gaseosos</th>         
 
                 <td>Júpiter</td>
                 <td>1898</td>
@@ -111,7 +117,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td rowspan="2">Gigantes de hielo</td>
+                <th rowspan="2">Gigantes de hielo</th>
                 <td>Urano</td>
                 <td>86.8</td>
                 <td>51,118</td>
@@ -136,7 +142,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td colspan="2">planeta enano</td>
+                <th colspan="2">planeta enano</th>
                 <td>Plutón</td>
                 <td>0.0146</td>
                 <td>2,370</td>
