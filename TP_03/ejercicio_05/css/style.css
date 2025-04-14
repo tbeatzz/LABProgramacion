@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
+header {
+  background-color: #cceeff;
+  padding: 1em;
+  margin: 1em;
+  
+}
+
+nav {
+  background-color: #f8caca;
+  padding: 1em;
+  margin: 1em;
+}
+
+footer {
+  background-color: #ccf2d1;
+  padding: 1em;
+  margin: 1em;
+}
+
+header, footer{
+    flex: .2;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-grow: 1;
+  padding: 1em;
+  gap: 1em;
+}
+
+/* Columna izquierda con sección y artículo */
+.sectionArticleContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  gap: 1em;
+}
+
+section {
+  background-color: #e5fcb6;
+  padding: 1em;
+  
+}
+
+article {
+  background-color: #e5dcff;
+  padding: 1em;
+}
+
+section, article{
+    flex: 1;
+}
+
+/* Aside al costado derecho */
+aside {
+  background-color: #fff1a8;
+  padding: 1em;
+  flex: 1;
+}
