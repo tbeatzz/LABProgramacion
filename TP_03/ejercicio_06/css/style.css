@@ -9,23 +9,25 @@
 a{
     text-decoration: none;
 }
+p{
+    font-weight: 400;
+    line-height: 1.5em;
+    font-size: .9em;    
+    font-style: italic;
+}
+
+
+/* inicio header */
 
 .header{
     padding: 3em;
     background-color: #eadcd1;
+    position: relative;
+    z-index: 2;
 }
-
-
-
-
-
-
 .headerLogo > h1{
-    font-weight:900 ;
-    
+    font-weight:900 ;    
 }
-
-
 .headerLogo, .navBar, .navLink{
     display: inline-block;
 }
@@ -52,7 +54,7 @@ a{
 .navLink a{
     color: #2b2a2a;
     text-transform: uppercase;
- 
+    cursor: pointer;
 }
 
 .navLink a:hover{
@@ -61,9 +63,13 @@ a{
     color: #000000;
 }
 
+/* fin header */
+
+/* inicio hero  */
+
 .hero{
     min-height: 90vh;
-
+    position: relative;
     background-color: #F2EFEA;
 }
 .hero>svg{
@@ -84,8 +90,8 @@ a{
    z-index: 1;
 }  
 
-.heroContainer > h1,.heroBtnContainer{
-    padding: 2em 0;
+.heroContainer > h1{
+    padding: 1em 0;
 }
 .heroContainer > h1{
     font-weight: 600;
@@ -94,22 +100,130 @@ a{
     text-transform: uppercase;
 }
 
-.heroContainer > p{
+
+.heroBtnContainer{
+    padding: 3em 0;
+}
+.btn{
+    border: .2em solid black;
+    cursor: pointer;
+    padding: .7em 3em;
     font-weight: 400;
-    line-height: 1.5em;
-    font-size: .9em;    
-    font-style: italic;
+    background-color: transparent;
+}
+
+.btn:hover{
+    transition: .3s all;
+    background-color: #2b2a2a;
+    color: #EADCD1;
 
 }
+
+/* fin hero */
+
+/* inicio engagin section */
+
 .engaging{
     background-color: whitesmoke;
+    text-align: center;
+    padding: 2em;
+    position: relative;
+    height: 40vh;
 }
+
+.engagingContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width:40vw;
+}
+
+.engagingContainer > p{
+    padding: 1em;
+}
+
+/* engaging sectio fin */
+
+/* introduction section inicio */
+
+
 .introduction{
+    padding: 2em;
+    position: relative;
+    height: 40vh;
     background-color: #F2EFEA;
 }
+.introductionImgContainer{
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 40vw; */
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.introductionImgContainer > img, .introductionText{ 
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    vertical-align: middle;
+}
+.introductionText{
+    max-width: 60%;
+    padding: 2em;
+} 
+
+.introductionText > p{
+    padding: 1em 0;
+}
+
+/* introduction section fin */
 
 .services{
     background-color: whitesmoke;
+    
+    padding: 3em;
+    position: relative;
+    height: 50vh;
+  
+}
+
+.serviceContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width:40vw;
+}
+.serviceCard{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.service{
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    vertical-align: middle;
+    
+    padding: 1em;
+}
+.service>figcaption{
+    text-align: center;
+}
+
+
+.card{
+    width: 200px;
+    height: 200px;
+    background-color: #2b2a2a;
 }
 
 .socialProof{
