@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
+.header{
+    background-color: #eadcd1;
+}
+
+.hero{
+    background-color: #F2EFEA;
+}
+.engaging{
+    background-color: whitesmoke;
+}
+.introduction{
+    background-color: #F2EFEA;
+}
+
+.services{
+    background-color: whitesmoke;
+}
+
+.socialProof{
+    background-color: #F2EFEA;
+}
+.extras{
+    background-color: #F2EFEA;
+}
+
+.footer{
+    background-color: #EADCD1;
+}

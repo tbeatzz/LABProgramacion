@@ -4,4 +4,121 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
+    color: #2b2a2a;
+}
+a{
+    text-decoration: none;
+}
+
+.header{
+    padding: 3em;
+    background-color: #eadcd1;
+}
+
+
+
+
+
+
+.headerLogo > h1{
+    font-weight:900 ;
+    
+}
+
+
+.headerLogo, .navBar, .navLink{
+    display: inline-block;
+}
+.headerLogo{
+    float: left;
+}
+.navBar{
+    float: right;
+}
+
+.headerLogo, .navBar{
+    position: relative;
+    bottom: 1em;
+}
+
+.navBar{
+    position: relative;
+    bottom: .5em;
+}
+
+.navLink {
+    padding:  0 2em;
+}
+.navLink a{
+    color: #2b2a2a;
+    text-transform: uppercase;
+ 
+}
+
+.navLink a:hover{
+    transition: .5s all;
+
+    color: #000000;
+}
+
+.hero{
+    min-height: 90vh;
+
+    background-color: #F2EFEA;
+}
+.hero>svg{
+    position: absolute;
+    height: auto;
+    bottom: 0;
+}
+.heroContainer {
+
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+
+   max-width: 30vw;
+
+   z-index: 1;
+}  
+
+.heroContainer > h1,.heroBtnContainer{
+    padding: 2em 0;
+}
+.heroContainer > h1{
+    font-weight: 600;
+    line-height: 1em;
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+.heroContainer > p{
+    font-weight: 400;
+    line-height: 1.5em;
+    font-size: .9em;    
+    font-style: italic;
+
+}
+.engaging{
+    background-color: whitesmoke;
+}
+.introduction{
+    background-color: #F2EFEA;
+}
+
+.services{
+    background-color: whitesmoke;
+}
+
+.socialProof{
+    background-color: #F2EFEA;
+}
+.extras{
+    background-color: #F2EFEA;
+}
+
+.footer{
+    background-color: #EADCD1;
 }
