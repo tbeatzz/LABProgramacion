@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Titos Alan">
+
+    <title>Settings | Account</title>
+
+    <meta
+      name="description"
+      content="Página de configuración de cuenta para gestionar tu perfil, facturación y contraseña"
+    />
+    <meta
+      name="keywords"
+      content="configuración, cuenta, perfil, facturación, contraseña, ajustes"
+    />
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Settings</h1>
+    </header>
+
+    <main>
+      <form action="" method="post" id="form">
+        <hr />
+        <fieldset class="account container">
+          <div class="fieldsetHeader"><h2>Account</h2></div>
+
+          <div class="inputContainer">
+            <label for="name">Full Name</label>
+            <input type="text" name="name" required  title="Por favor ingresa tu nombre"
+            placeholder="Tu nombre"/>
+
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              name="email"
+              required
+              title="Por favor ingresa un email válido (ejemplo: usuario@gmail.com)"
+              placeholder="usuario@gmail.com"
+            />
+
+            <label for="number">Phone number</label>
+            <input
+              type="number"
+              name="number"
+              required
+              title="Ingresa un número de teléfono válido (ej: +123456789)"
+              placeholder="+123456789"
+            />
+          </div>
+        </fieldset>
+        <hr />
+        <fieldset class="billing container">
+          <div class="fieldsetHeader"><h2>Billing</h2></div>
+          <div class="inputContainer">
+            <div class="halfInputContainer">
+              <div class="half">
+                <label for="plan">Plan</label>
+                <input type="text" name="plan" required />
+              </div>
+
+              <div class="half">
+                <label for="interval">Billing interval</label>
+                <select name="interval" id="">
+                  <option selected value="Monthly">Monthly</option>
+                  <option value="Anual">Anual</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <hr />
+        <fieldset class="businessAddress container">
+          <div class="fieldsetHeader"><h2>Business Address</h2></div>
+
+          <div class="inputContainer">
+            <label for="Street">Street address</label>
+            <input type="text" name="Street" id="" />
+
+            <div class="halfInputContainer">
+              <div class="half">
+                <label for="City">City</label>
+                <input type="text" name="City" required />
+              </div>
+
+              <div class="half">
+                <label for="province">Province</label>
+                <select name="province" id="">
+                  <option selected value="Ontario">Ontario</option>
+                  <option value="Alberta">Alberta</option>
+                  <option value="Columbia Británica">Columbia Británica</option>
+                  <option value="Manitoba">Manitoba</option>
+                  <option value="Nuevo Brunswick">Nuevo Brunswick</option>
+                  <option value="Terranova y Labrador">
+                    Terranova y Labrador
+                  </option>
+                  <option value="Nueva Escocia">Nueva Escocia</option>
+                  <option value="Isla del Príncipe Eduardo">
+                    Isla del Príncipe Eduardo
+                  </option>
+                  <option value="Quebec">Quebec</option>
+                  <option value="Saskatchewan">Saskatchewan</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="halfInputContainer">
+              <div class="half">
+                <label for="PostalCode">ZIP/Postal Code</label>
+                <input type="text" name="PostalCode" required />
+              </div>
+
+              <div class="half">
+                <label for="Country">Country</label>
+                <select name="Country" id="">
+                  <option selected value="Canada">Canada</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <hr />
+        <fieldset class="changePassword container">
+          <div class="fieldsetHeader">
+            <h2>Change Password</h2>
+            <p>Password must be at least 6 characters</p>
+          </div>
+
+          <div class="inputContainer">
+            <div class="halfInputContainer">
+              <div class="half">
+                <label for="Password">Password</label>
+                <input type="password" name="Password" required minlength="8" title="La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas y números"/>
+              </div>
+
+              <div class="half">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" required  minlength="8" title="La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas y números"/>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <hr />
+      </form>
+    </main>
+
+    <footer>
+      <div class="btnContainer">
+        <button class="btn cancel">Cancel</button>
+        <button type="submit" form="form" value="Update" class="btn update">
+          Update
+        </button>
+      </div>
+    </footer>
+  </body>
+</html>

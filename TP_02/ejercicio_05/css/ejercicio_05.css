@@ -1,11 +1,44 @@
-li:first-child{
-    background-color: red;
+/* Pruebas de selectores */
+li:first-child {
+    color: red; /* Primer li de cada ul (17, 25) */
 }
-li:last-child
-li:nth-child(2){}
-li:nth-child(2n+3){}
-li:nth-child(2n+1){}
-li:nth-last-child(-n+2){}
-footer > ul{}
-header ul{}
-main h1{}
+
+li:last-child {
+    color: blue; /* Último li de cada ul (19, 27) */
+}
+
+li:nth-child(2) {
+    font-weight: bold; /* Segundo li de cada ul (18, 26) */
+}
+
+li:nth-child(2n+3) {
+    background-color: rgb(0, 183, 255); /* 19 27 */
+}
+
+li:nth-child(2n+1) {
+    text-decoration: underline; /* Li impares (17 19 25 27) */
+}
+
+li:nth-last-child(-n+2) {
+    font-style: italic; /* ult 2 li de cada ul (18, 19; 26, 27) */
+}
+
+footer > ul {
+    border: 2px solid green; /* No aplica*/
+}
+
+header ul {
+    background-color: rgb(136, 19, 19); /* ul dentro de header (10) */
+}
+
+main h1 {
+    color: rgb(255, 255, 255); /* 20*/
+}
+
+p:nth-child(odd) {
+    background-color: rgb(83, 70, 72); /* 22 24 14 */
+}
+
+section > p {
+    border: 4px solid orange; /*(22, 23) */
+}

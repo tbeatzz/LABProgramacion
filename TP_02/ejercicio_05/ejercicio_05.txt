@@ -1,7 +1,8 @@
+
 5. En base a la Figura 5, indique que elementos del documento HTML se verán afectados por los siguientes
 selectores CSS:
-(a) li:first-child -> 17 25 / 0
-(b) li:last-child -> 19 27 / 27 
+(a) li:first-child -> 17 25 
+(b) li:last-child -> 19 27 
 (c) li:nth-child(2) -> 18 26
 (d) li:nth-child(2n+3) -> 19 27
 (e) li:nth-child(2n+1) -> 17 19 25 27
@@ -9,5 +10,5 @@ selectores CSS:
 (g) footer > ul -> 0
 (h) header ul -> 10
 (i) main h1 -> 20
-(j) p:nth-child(odd) -> 21 22 14
+(j) p:nth-child(odd) ->22 24 14
 (k) section > p -> 14, 22, 23 
