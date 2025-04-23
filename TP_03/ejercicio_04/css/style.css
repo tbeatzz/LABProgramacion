@@ -4,57 +4,61 @@
   padding: 0;
 }
 
+header, nav, footer {
+  text-align: center;
+  line-height: 7em;
+}
+
 header {
   background-color: #cceeff;
-  padding: 1em;
   margin: 1em;
-
   height: 7em;
 }
 
 nav {
   background-color: #f8caca;
-  padding: 1em;
   margin: 1em;
+  height: 4em;
+  line-height: 4em;
+}
+
+.container {
+  float: left;
+  width: 70%;
+  margin: 1em 0 1em 1em;
+}
+
+section, article {
+  text-align: center;
+  line-height: 20em;
+  margin-bottom: 1em;
 }
 
 section {
   background-color: #e5fcb6;
-  padding: 1em;
-  margin: 1em;
-
   height: 20em;
 }
+
 article {
   background-color: #e5dcff;
-  padding: 1em;
-  margin: 1em;
-  height: 20em; 
+  height: 20em;
 }
 
-.container{
-    display: inline-block;
-    vertical-align: top;
-    width: 70%;
-}
 aside {
-  background-color: #fff1a8;
-  padding: 1em;
+  float: left;
+  width: calc(30% - 3em);
   margin: 1em;
-
-    height: calc(20em + 20em + 1em);
-
-  display: inline-block;
-
-  width: calc(30% - 4em);
+  background-color: #fff1a8;
+  height: 41em;
+  text-align: center;
+  line-height: 41em;
 }
-
-
 
 footer {
+  clear: both;
   background-color: #ccf2d1;
-  padding: 1em;
   margin: 1em;
-
   height: 7em;
+  text-align: center;
+  line-height: 7em;
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Titos Alan" />
+    <meta name="author" content="Titos Alan">
 
     <title>Settings | Account</title>
 
@@ -32,13 +32,8 @@
 
           <div class="inputContainer">
             <label for="name">Full Name</label>
-            <input
-              type="text"
-              name="name"
-              required
-              title="Por favor ingresa tu nombre"
-              placeholder="Tu nombre"
-            />
+            <input type="text" name="name" required  title="Por favor ingresa tu nombre"
+            placeholder="Tu nombre"/>
 
             <label for="email">Email Address</label>
             <input
@@ -51,18 +46,16 @@
 
             <label for="number">Phone number</label>
             <input
-              type="tel"
+              type="number"
               name="number"
               required
-              title="Ingresa un número de teléfono válido (ej: +5492974345601)"
-              placeholder="+549xxxxxxxxxx"
-              pattern="^\+549[0-9]{10}$" 
-              />
-              
+              title="Ingresa un número de teléfono válido (ej: +123456789)"
+              placeholder="+123456789"
+            />
           </div>
         </fieldset>
         <hr />
-        <fieldset class="billing container">  
+        <fieldset class="billing container">
           <div class="fieldsetHeader"><h2>Billing</h2></div>
           <div class="inputContainer">
             <div class="halfInputContainer">
@@ -142,24 +135,12 @@
             <div class="halfInputContainer">
               <div class="half">
                 <label for="Password">Password</label>
-                <input
-                  type="password"
-                  name="Password"
-                  required
-                  minlength="8"
-                  title="La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas y números"
-                />
+                <input type="password" name="Password" required minlength="8" title="La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas y números"/>
               </div>
 
               <div class="half">
                 <label for="confirmPassword">Confirm Password</label>
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  required
-                  minlength="8"
-                  title="La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas y números"
-                />
+                <input type="password" name="confirmPassword" required  minlength="8" title="La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas y números"/>
               </div>
             </div>
           </div>

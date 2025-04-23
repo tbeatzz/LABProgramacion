@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Formulario de contacto para solicitar información o ayuda"
+    />
+
+    <title>Formulario de Contacto</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <section id="form">
+        <div class="containerForm">
+          <form action="" method="POST">
+            <fieldset class="formRow">
+              <div class="formInputContainer">
+                <label for="name">First Name</label>
+                <input
+                  class="formInput"
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="First name"
+                  minlength="2"
+                  maxlength="50"
+                  title="Solo letras y espacios"
+                  required
+                />
+              </div>
+
+              <div class="formInputContainer">
+                <label for="lastname">Last name</label>
+                <input
+                  class="formInput"
+                  id="lastname"
+                  name="lastname"
+                  type="text"
+                  placeholder="Last name"
+                  required
+                />
+              </div>
+            </fieldset>
+
+            <div class="formInputContainer">
+              <label for="emailaddress">Email</label>
+              <input
+                class="formInput"
+                id="emailaddress"
+                name="emailaddress"
+                type="email"
+                placeholder="tu@email.com"
+                title="Ingrese un email válido"
+                required
+              />
+            </div>
+
+            <div class="formInputContainer">
+              <label for="subject">Subject</label>
+              <select class="formInput" id="subject" name="subject" required>
+                <option value="" selected disabled>Select</option>
+                <option value="consulta">Consulta general</option>
+                <option value="soporte">Soporte técnico</option>
+                <option value="ventas">Información de ventas</option>
+              </select>
+            </div>
+
+            <div class="formInputContainer">
+              <label for="help">How can we help?</label>
+              <textarea
+                class="formInput"
+                id="help"
+                name="help"
+                placeholder="Message..."
+                minlength="10"
+                maxlength="500"
+                required
+              ></textarea>
+            </div>
+
+            <div class="formBtnContainer">
+              <button class="formBtn" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

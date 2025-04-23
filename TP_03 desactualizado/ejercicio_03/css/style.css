@@ -1,0 +1,93 @@
+* {
+  margin: 1em;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header, nav, aside, main, footer, article, section, figure, p {
+  text-align: center;
+  align-content: center;
+}
+
+header {
+  background-color: #cceeff; /* celeste claro */
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+nav {
+  background-color: #f8cfd1; /* rosa claro */
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+
+  margin: 0;
+}
+
+aside {
+  background-color: #fff4b3; /* amarillo claro */
+  padding: 1em;
+  border: 1px solid #ccc;
+  width: 30%;
+}
+
+main {
+  background-color: #fff4b3; /* mismo amarillo claro */
+  padding: 1em;
+  border: 1px solid #ccc;
+
+  width: 100%;
+}
+
+article {
+  background-color: white;
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+article > header {
+  background-color: #eaffcc; /* verde muy claro */
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+figure {
+  background-color: #ffedb3; /* amarillo cálido claro */
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+p {
+  background-color: #ffe4cc; /* naranja pastel */
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+article > footer {
+  background-color: #f3e2f3; /* lila claro */
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+section {
+  background-color: white;
+  padding: 1em;
+  border: 1px solid #ccc;
+}
+
+footer {
+  background-color: #ccffe6; /* verde menta claro */
+  padding: 1em;
+  border: 1px solid #ccc;
+}
