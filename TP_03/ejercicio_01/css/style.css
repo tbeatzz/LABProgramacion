@@ -13,8 +13,8 @@ body {
 }
 
 .containerForm {
-  max-width: 50vh;
-  width: 50%;
+ width: 30em;
+
   margin-left: auto;
   margin-right: auto;
   border: 0.3em solid #d3d5da;

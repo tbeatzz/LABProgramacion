@@ -134,9 +134,21 @@ select:focus{
     background-color: #7eaed6;
 }
 
-/* Media Queries (agrupadas y optimizadas) */
+/* para replicar bien la imagen */
+.account > .inputContainer > :nth-child(2n + 2){
+  width: 90%;
+}
+.account > .inputContainer > :last-child{
+  width: 50%;
+}
+
+/* Media Queries */
 
 @media (max-width:844px){
+    header{
+      text-align: center;
+    }
+  
     .container{
         flex-direction: column;
     }
@@ -148,6 +160,12 @@ select:focus{
         align-items: flex-end;
         font-weight: 900;
 
+    }
+    .account > .inputContainer > :last-child, .account > .inputContainer > :nth-child(2n + 2){
+      width: 100%;
+    }
+    .btnContainer{
+      justify-content: center;
     }
 }
 

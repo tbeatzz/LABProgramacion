@@ -39,7 +39,6 @@ header, footer{
     flex: .2;
 }
 
-/* Contenedor principal */
 .container {
   display: flex;
   flex-grow: 1;
@@ -47,7 +46,6 @@ header, footer{
   gap: 1em;
 }
 
-/* Columna izquierda con sección y artículo */
 .sectionArticleContainer {
   display: flex;
   flex-direction: column;
@@ -70,9 +68,15 @@ section, article{
     flex: 1;
 }
 
-/* Aside al costado derecho */
+
 aside {
   background-color: #fff1a8;
   padding: 1em;
   flex: 1;
+}
+
+header, nav, footer, section, article, aside {
+  display: flex;
+align-items: center;
+  justify-content: center;
 }
