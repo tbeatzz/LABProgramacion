@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="header wrap">
+      <div class="container">
+        <figure class="headerLogo">
+          <a href="#"><img src="./img/logo-mmartinez.webp" alt="Logo de mmartinez" /></a>
+        </figure>
+        <nav class="headerNav">
+          <ul>
+            <li><a href="">Shop</a></li>
+            <li><a href="">Guía de Talles</a></li>
+            <li><a href="">Contacto</a></li>
+            <li><a href="">Preguntas Frecuentes</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap">
+      <section class="container">
+        <hr >
+        <div class="formContainer">
+          <h2>Encuesta de Satisfacción - Atención al Cliente</h2>
+          <form class="formSatisfaccion" action="">
+
+             <!-- Nombre -->
+            <div class="formGroup">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required />
+            </div>
+            
+             <!-- Email -->
+            <div class="formGroup">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+
+            <!-- Edad -->
+            <div class="formGroup">
+                <label for="edad">Edad:</label>
+                <input
+                type="number"
+                id="edad"
+                name="edad"
+                min="12"
+                max="100"
+                required
+                />
+            </div>
+
+            <!-- Género -->
+            <div class="formGroup">
+                <label>Género:</label>
+                <input type="radio" id="masculino" name="genero" value="Masculino" required/>
+                <label for="masculino">Masculino</label>
+                <input type="radio" id="femenino" name="genero" value="Femenino" />
+                <label for="femenino">Femenino</label>
+                <input type="radio" id="otro" name="genero" value="Otro" />
+                <label for="otro">Otro</label>
+            </div>
+
+            <!-- Nivel de satisfacción -->
+            <div class="formGroup">
+                <label for="satisfaccion">Nivel de satisfacción con el servicio:</label>
+
+                <select id="satisfaccion" name="satisfaccion" required>
+                    <option value="">Seleccionar</option>
+                    <option value="Muy satisfecho">Muy satisfecho</option>
+                    <option value="Satisfecho">Satisfecho</option>
+                    <option value="Insatisfecho">Insatisfecho</option>
+                </select>
+            </div>
+
+            <!-- Características que más te gustaron -->
+            <div class="formGroup">
+                <label>¿Qué características te gustaron más del servicio?</label>
+            
+                <input type="checkbox" id="rapidez" name="caracteristicas" value="Rapidez"/>
+                <label for="rapidez">Rapidez en la respuesta</label>
+
+                <input type="checkbox" id="amabilidad" name="caracteristicas" value="Amabilidad"/>
+                <label for="amabilidad">Amabilidad del personal</label><br />
+                
+                <input type="checkbox" id="resolucion" name="caracteristicas" value="Resolución"/>
+                <label for="resolucion">Resolución efectiva del problema</label>
+            </div>
+
+            <!-- Comentarios adicionales -->
+            <div class="formGroup">
+                <label for="comentarios">Comentarios adicionales:</label><br />
+                <textarea
+                id="comentarios"
+                name="comentarios"
+                rows="4"
+                cols="50"
+                ></textarea>
+            </div>
+
+            <!-- ¿Nos recomendarías? -->
+            <div class="formGroup">
+                <label>¿Nos recomendarías a otras personas?</label>
+                <input type="radio" id="recom-si" name="recomendarias" value="Sí" required/>
+                <label for="recom-si">Sí</label>
+                <input type="radio" id="recom-no" name="recomendarias" value="No" />
+                <label for="recom-no">No</label>
+            </div>
+
+            <!-- Fecha de uso del servicio -->
+            <div class="formGroup">
+                <label for="fecha">¿Cuándo usaste el servicio?</label>
+                <input type="date" id="fecha" name="fecha" required />
+            </div>
+
+            <!-- ¿Querés recibir novedades? -->
+            <div class="formGroup">
+                <input type="checkbox" id="novedades" name="novedades" />
+                <label for="novedades">Deseo recibir novedades y promociones</label>
+            </div>
+
+            <!-- Botón de envío -->
+            <button type="submit">Enviar encuesta</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
+
+<!-- Servicio de atención al cliente de una tienda online de ropa.
+
+
+Genere el documento HTML ejercicio_12.html, para crear una aplicación Web que simule una encuesta de 
+satisfacción del usuario sobre un servicio (puede ser un sitio web, app, o cualquier servicio digital). El 
+formulario debe contener al menos 10 controles distintos, incluyendo: 
+• Campo de texto para nombre 
+• Campo de texto para email 
+• Edad (número) 
+• Género (radio buttons) 
+• Nivel de satisfacción (select) (por lo menos 3 opciones) 
+• ¿Qué características te gustaron más? (checkboxes) (por lo menos 3 opciones) 
+• Comentarios adicionales (textarea) 
+• ¿Nos recomendarías? (radio buttons) 
+• Fecha de uso del servicio (input date) 
+• ¿Querés recibir novedades? (checkbox) 
+a) Elija una temática. Ejemplos: compra de un producto, curso realizado, servicio de mantenimiento de 
+vehículo, etc. 
+b) Maquete la aplicación con una estructura semántica adecuada y estilos a criterio del alumno. El CSS 
+debe escribirse en ejercicio_12.css. 
+c) Agregué un botón para capturar y enviar los datos del formulario. Validando previamente que se hayan 
+completado todos los controles y que los datos tengan el formato correcto. 
+d) Resalte los errores de validación para cada campo. 
+e) Evitar el renvio o refresco de la página, capturando los datos en un objeto javascript. 
+f) Mostrar/imprimir el objeto en formato JSON.
+-->

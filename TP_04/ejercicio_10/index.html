@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+
+    <script defer type="text/javascript" src="./js/scripts.js"></script>
+</head>
+<body>
+
+    <main>
+
+        <section class="colorChanger">
+            <h1>Cambiando color de fondo de pagina</h1>
+            <form id="colorForm" action="">
+                <label for="colorSelect">Seleccione un color</label>
+                <select required id="colorSelect">
+
+                    <option disabled selected value="-">Seleccione un valor</option>
+                    <option value="rojo">rojo</option>
+                    <option value="verde">verde</option>
+                    <option value="azul">azul</option>
+                    <option value="amarillo">amarillo</option>
+                </select>
+
+                <button onclick="colorReset()" class="colorBtn reset" id="colorBtnReset" type="reset">Limpiar</button>
+                <button onclick="colorChange()" class="colorBtn submit" id="colorBtnSubmit" type="button">Cambiar</button>
+
+            </form>
+
+        </section>
+
+    </main>
+    
+</body>
+</html>
