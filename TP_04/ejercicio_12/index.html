@@ -60,18 +60,20 @@
                         </div>
                         <input type="text" id="nombre" name="nombre" required />
                      </div>
-                     <div class="halfGroup formEmail">
+                     <div class="halfGroup" id="formEmail">
                         <div class="labelContainer">
                            <label for="email">Email</label>
+                           <p class="formFeedback ">formato de mail incorrecto</p>
                         </div>
                         <input type="email" id="email" name="email" required />
                      </div>
                   </fieldset>
                   <fieldset class="formGroup half">
-                     <div class="halfGroup formEdad">
+                     <div class="halfGroup" id="formEdad">
                         <!-- edad -->
                         <div class="labelContainer">
                            <label for="edad">Edad</label>
+                           <p class="formFeedback">solo digitos numericos menores a 120</p>
                         </div>
                         <input
                            type="number"

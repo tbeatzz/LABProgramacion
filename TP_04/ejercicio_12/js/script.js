@@ -22,11 +22,11 @@ const validarInputs = (e) =>{
         break;
 
         case 'email':
-            console.log('email');
+            validarCampo(expresionesRegulares.email, e.target, 'Email');
         break;
 
         case 'edad':
-            console.log('edad');
+            validarCampo(expresionesRegulares.edad, e.target, 'Edad');
         break;
 
         case 'masculino':
@@ -68,15 +68,20 @@ const validarInputs = (e) =>{
 
 const validarCampo = (expresion, input, campo) => {
     if(expresion.test(input.value)){
-        document.querySelector('.formFeedback').classList.remove('incorrecto');
+      
+
+        document.querySelector(`#form${campo} .formFeedback`).classList.remove('incorrecto')
 
         document.getElementById(`form${campo}`).classList.remove('incorrecto');
         document.getElementById(`form${campo}`).classList.add('correcto');
     }else{
-        document.querySelector('.formFeedback').classList.add('incorrecto');
+        document.querySelector(`#form${campo} .formFeedback`).classList.add('incorrecto')
+        
 
-        document.getElementById(`form${campo}`).classList.remove('correcto');
+        
+        
         document.getElementById(`form${campo}`).classList.add('incorrecto');
+        document.getElementById(`form${campo}`).classList.remove('correcto');
     }
 }
 
