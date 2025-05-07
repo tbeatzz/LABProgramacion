@@ -1,303 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Encuesta de Satisfacción - Mmartinez | Tienda Online</title>
-      <base href="./index.html" />
-      <meta
-         name="description"
-         content="Completa nuestra encuesta de satisfacción para ayudarnos a mejorar la atención al cliente en Mmartinez."
-         />
-      <link rel="stylesheet" href="./css/style.css" />
 
-      <script defer src="./js/script.js"></script>
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Encuesta de Satisfacción - Mmartinez | Tienda Online</title>
+   <base href="http://127.0.0.1:5500/TP_04/ejercicio_12/index.html" />
+   <meta name="description"
+      content="Completa nuestra encuesta de satisfacción para ayudarnos a mejorar la atención al cliente en Mmartinez." />
+   <link rel="stylesheet" href="./css/style.css" />
 
-   </head>
-   <body>
-      <header class="header wrap">
-         <div class="container">
-            <figure class="headerLogo">
-               <!-- Enlace a la página principal -->
-               <a href="/"
-                  ><img
-                  src="./img/logo-mmartinez.webp"
-                  alt="Logo de Mmartinez - Tienda de Moda"
-                  /></a>
-            </figure>
-            <!-- Aria-label para accesibilidad -->
-            <nav class="headerNav" aria-label="Navegación principal">
-               <ul>
-                  <li><a href="./shop">Shop</a></li>
-                  <li><a href="./guia-talles">Guía de Talles</a></li>
-                  <li><a href="./contacto">Contacto</a></li>
-                  <li><a href="./preguntas-frecuentes">Preguntas Frecuentes</a></li>
-               </ul>
-            </nav>
-         </div>
-      </header>
-      <main class="wrap">
-         <section class="formSection container">
-            <h1>Encuesta de Satisfacción de Atención al Cliente</h1>
-            <p>
-               En Mmartinez valoramos tu opinión. Completa esta encuesta para
-               ayudarnos a mejorar nuestra atención al cliente.
-            </p>
-            <div class="formContainer">
-               <!-- <h2>Encuesta de Satisfacción - Atención al Cliente</h2> -->
-               <form
-                  class="formSatisfaccion"
-                  action="/enviar-encuesta"
-                  method="POST"
-                  id="form"
-                  >
-                  <fieldset class="formGroup half">
-                     <div class="halfGroup" id="formNombre">
-                        <!-- nombre -->
-                        <div class="labelContainer">
-                           <label for="nombre">Nombre</label>
-                           <p class="formFeedback ">el nombre tiene que tener mas de 2 digitos y usar solo letras</p>
-                        </div>
-                        <input type="text" id="nombre" name="nombre" required />
-                     </div>
-                     <div class="halfGroup" id="formEmail">
-                        <div class="labelContainer">
-                           <label for="email">Email</label>
-                           <p class="formFeedback ">formato de mail incorrecto</p>
-                        </div>
-                        <input type="email" id="email" name="email" required />
-                     </div>
-                  </fieldset>
-                  <fieldset class="formGroup half">
-                     <div class="halfGroup" id="formEdad">
-                        <!-- edad -->
-                        <div class="labelContainer">
-                           <label for="edad">Edad</label>
-                           <p class="formFeedback">solo digitos numericos menores a 120</p>
-                        </div>
-                        <input
-                           type="number"
-                           id="edad"
-                           name="edad"
-                           min="12"
-                           max="100"
-                           required
-                           />
-                     </div>
-                     <div class="halfGroup">
-                        <fieldset>
-                           <legend>Género</legend>
-                           <div class="radioGroup">
-                              <div class="radioContainer">
-                                 <!-- genero -->
-                                 <input
-                                    type="radio"
-                                    id="masculino"
-                                    name="genero"
-                                    value="Masculino"
-                                    required
-                                    />
-                                 <label for="masculino">Masculino</label>
-                              </div>
-                              <div class="radioContainer">
-                                 <!-- genero 2 -->
-                                 <input
-                                    type="radio"
-                                    id="femenino"
-                                    name="genero"
-                                    value="Femenino"
-                                    />
-                                 <label for="femenino">Femenino</label>
-                              </div>
-                              <div class="radioContainer">
-                                 <!-- genero 3 -->
-                                 <input
-                                    type="radio"
-                                    id="otro"
-                                    name="genero"
-                                    value="Otro"
-                                    />
-                                 <label for="otro">Otro</label>
-                              </div>
-                           </div>
-                        </fieldset>
-                     </div>
-                  </fieldset>
-                  <fieldset class="formGroup half">
-                     <div class="halfGroup">
-                        <div class="labelContainer">
-                           <label for="satisfaccion"
-                           >Nivel de satisfacción con el servicio:</label
-                           >
-                        </div>
-                        <!-- satisfaccion -->
-                        <select id="satisfaccion" name="satisfaccion" required>
-                           <option disabled selected value="">Seleccionar</option>
-                           <option value="Muy satisfecho">Muy satisfecho</option>
-                           <option value="Satisfecho">Satisfecho</option>
-                           <option value="Insatisfecho">Insatisfecho</option>
-                        </select>
-                     </div>
-                     <div class="halfGroup">
-                        <fieldset>
-                           <legend>
-                              ¿Qué características te gustaron más del servicio?
-                           </legend>
-                           <div class="radioGroup">
-                              <div class="radioContainer">
-                                 <!-- rapidez -->
-                                 <input
-                                    type="checkbox"
-                                    id="rapidez"
-                                    name="caracteristicas[]"
-                                    value="Rapidez"
-                                    />
-                                 <label for="rapidez">Rapidez en la respuesta</label>
-                              </div>
-                              <div class="radioContainer">
-                                 <!-- amabilidad -->
-                                 <input
-                                    type="checkbox"
-                                    id="amabilidad"
-                                    name="caracteristicas[]"
-                                    value="Amabilidad"
-                                    />
-                                 <label for="amabilidad">Amabilidad del personal</label>
-                              </div>
-                              <div class="radioContainer">
-                                 <!-- resolucion -->
-                                 <input
-                                    type="checkbox"
-                                    id="resolucion"
-                                    name="caracteristicas[]"
-                                    value="Resolución"
-                                    />
-                                 <label for="resolucion"
-                                    >Resolución efectiva del problema</label
-                                    >
-                              </div>
-                           </div>
-                        </fieldset>
-                     </div>
-                  </fieldset>
-                  <div class="formGroup">
+   <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+   <header class="header wrap">
+      <div class="container">
+         <figure class="headerLogo">
+            <!-- Enlace a la página principal -->
+            <a href="/"><img src="./img/logo-mmartinez.webp" alt="Logo de Mmartinez - Tienda de Moda" /></a>
+         </figure>
+         <!-- Aria-label para accesibilidad -->
+         <nav class="headerNav" aria-label="Navegación principal">
+            <ul>
+               <li><a href="./shop">Shop</a></li>
+               <li><a href="./guia-talles">Guía de Talles</a></li>
+               <li><a href="./contacto">Contacto</a></li>
+               <li><a href="./preguntas-frecuentes">Preguntas Frecuentes</a></li>
+            </ul>
+         </nav>
+      </div>
+   </header>
+   <main class="wrap">
+      <section class="formSection container">
+         <h1>Encuesta de Satisfacción de Atención al Cliente</h1>
+         <p>
+            En Mmartinez valoramos tu opinión. Completa esta encuesta para
+            ayudarnos a mejorar nuestra atención al cliente.
+         </p>
+         <div class="formContainer">
+            <!-- <h2>Encuesta de Satisfacción - Atención al Cliente</h2> -->
+            <form class="formSatisfaccion" action="/enviar-encuesta" method="POST" id="form">
+               <fieldset class="formGroup half">
+                  <div class="halfGroup" id="formNombre">
+                     <!-- nombre -->
                      <div class="labelContainer">
-                        <label for="comentarios">Comentarios adicionales</label>
+                        <label for="nombre">Nombre</label>
+                        <p class="formFeedback">
+                           el nombre tiene que tener mas de 2 digitos y usar solo
+                           letras
+                        </p>
                      </div>
-                     <!-- comentarios -->
-                     <textarea
-                        id="comentarios"
-                        name="comentarios"
-                        rows="4"
-                        cols="50"
-                        ></textarea>
+                     <input type="text" id="nombre" name="nombre" required />
                   </div>
-                  <fieldset class="formGroup half">
-                     <div class="halfGroup">
-                        <fieldset>
-                           <legend>¿Nos recomendarías a otras personas?</legend>
-                           <div class="radioGroup">
-                              <div class="radioContainer">
-                                 <!-- recom-si -->
-                                 <input
-                                    type="radio"
-                                    id="recom-si"
-                                    name="recomendarias"
-                                    value="Sí"
-                                    required
-                                    />
-                                 <label for="recom-si">Sí</label>
-                              </div>
-                              <div class="radioContainer">
-                                 <!-- recom-no -->
-                                 <input
-                                    type="radio"
-                                    id="recom-no"
-                                    name="recomendarias"
-                                    value="No"
-                                    />
-                                 <label for="recom-no">No</label>
-                              </div>
+                  <div class="halfGroup" id="formEmail">
+                     <div class="labelContainer">
+                        <label for="email">Email</label>
+                        <p class="formFeedback">formato de mail incorrecto</p>
+                     </div>
+                     <input type="email" id="email" name="email" required />
+                  </div>
+               </fieldset>
+               <fieldset class="formGroup half">
+                  <div class="halfGroup" id="formEdad">
+                     <!-- edad -->
+                     <div class="labelContainer">
+                        <label for="edad">Edad</label>
+                        <p class="formFeedback">
+                           solo digitos numericos menores a 120
+                        </p>
+                     </div>
+                     <input type="number" id="edad" name="edad" min="12" max="100" required />
+                  </div>
+                  <div class="halfGroup" id="formGenero">
+                     <fieldset>
+                        <legend>Género</legend>
+                        <div class="radioGroup">
+                           <div class="radioContainer">
+                              <!-- genero -->
+                              <input type="radio" id="masculino" name="genero" value="Masculino" required />
+                              <label for="masculino">Masculino</label>
                            </div>
-                        </fieldset>
-                     </div>
-                     <div class="halfGroup">
-                        <!-- fecha -->
-                        <label for="fecha">¿Cuándo usaste el servicio?</label>
-                        <input type="date" id="fecha" name="fecha" required />
-                     </div>
-                  </fieldset>
-                  <fieldset class="formGroup novedades half">
-                     <div class="halfGroup">
-                        <label for="novedades"
-                           >Deseo recibir novedades y promociones</label
-                           >
-                           <!-- novedades -->
-                        <input type="checkbox" id="novedades" name="novedades" />
-                     </div>
-                     <div class="halfGroup">
-                        <div class="formBtnContainer">
-                           <!-- Type corregido a submit -->
-                           <button class="btn" type="button" id="btnForm">
-                           Enviar encuesta
-                           </button>
+                           <div class="radioContainer">
+                              <!-- genero 2 -->
+                              <input type="radio" id="femenino" name="genero" value="Femenino" />
+                              <label for="femenino">Femenino</label>
+                           </div>
+                           <div class="radioContainer">
+                              <!-- genero 3 -->
+                              <input type="radio" id="otro" name="genero" value="Otro" />
+                              <label for="otro">Otro</label>
+                           </div>
                         </div>
+                     </fieldset>
+                  </div>
+               </fieldset>
+               <fieldset class="formGroup half">
+                  <div class="halfGroup" id="formSatisfaccion">
+                     <div class="labelContainer">
+                        <label for="satisfaccion">Nivel de satisfacción con el servicio:</label>
                      </div>
-                  </fieldset>
-               </form>
-            </div>
-         </section>
-      </main>
-      <footer class="footer wrap">
-         <div class="container">
-            <!-- Aria-label para accesibilidad -->
-            <nav class="footerNav" aria-label="Navegación secundaria">
-               <h2>Navegación</h2>
-               <ul>
-             
-                  <li><a href="./shop">Shop</a></li>
-                  <li><a href="./guia-talles">Guía de Talles</a></li>
-                  <li><a href="./contacto">Contacto</a></li>
-                  <li><a href="./preguntas-frecuentes">Preguntas Frecuentes</a></li>
-               </ul>
-            </nav>
-            <div class="footerContact">
-               <h2>Contáctanos</h2>
-               <!-- Contenido de ejemplo (ajusta según necesidades) -->
-               <p>Email: <a href="mailto:info@mmartinez.com">info@mmartinez.com</a></p>
-               <p>Teléfono: <a href="tel:+123456789">+123 456 789</a></p>
-            </div>
-            <div class="footerSocial">
-               <h2>Redes sociales</h2>
-               
-               <ul>
-                  <li>
-                     <a
-                        href="https://www.instagram.com/mmartinez"
-                        target="_blank"
-                        rel="noopener"
-                        >Instagram</a
-                        >
-                  </li>
-                  <li>
-                     <a
-                        href="https://www.facebook.com/mmartinez"
-                        target="_blank"
-                        rel="noopener"
-                        >Facebook</a
-                        >
-                  </li>
-                  <li>
-                     <a
-                        href="https://www.twitter.com/mmartinez"
-                        target="_blank"
-                        rel="noopener"
-                        >Twitter</a
-                        >
-                  </li>
-               </ul>
-            </div>
+                     <!-- satisfaccion -->
+                     <select id="satisfaccion" name="satisfaccion" required>
+                        <option disabled selected value="">Seleccionar</option>
+                        <option value="Muy satisfecho">Muy satisfecho</option>
+                        <option value="Satisfecho">Satisfecho</option>
+                        <option value="Insatisfecho">Insatisfecho</option>
+                     </select>
+                  </div>
+                  <div class="halfGroup" id="formCaracteristicas">
+                     <fieldset>
+                        <legend>
+                           ¿Qué características te gustaron más del servicio?
+                        </legend>
+                        <div class="radioGroup">
+                           <div class="radioContainer">
+                              <!-- rapidez -->
+                              <input type="checkbox" id="rapidez" name="caracteristicas[]" value="Rapidez" />
+                              <label for="rapidez">Rapidez en la respuesta</label>
+                           </div>
+                           <div class="radioContainer">
+                              <!-- amabilidad -->
+                              <input type="checkbox" id="amabilidad" name="caracteristicas[]" value="Amabilidad" />
+                              <label for="amabilidad">Amabilidad del personal</label>
+                           </div>
+                           <div class="radioContainer">
+                              <!-- resolucion -->
+                              <input type="checkbox" id="resolucion" name="caracteristicas[]" value="Resolución" />
+                              <label for="resolucion">Resolución efectiva del problema</label>
+                           </div>
+                        </div>
+                     </fieldset>
+                  </div>
+               </fieldset>
+               <div class="formGroup">
+                  <div class="labelContainer">
+                     <label for="comentarios">Comentarios adicionales</label>
+                  </div>
+                  <!-- comentarios -->
+                  <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="opcional"></textarea>
+               </div>
+               <fieldset class="formGroup half">
+                  <div class="halfGroup" id="formRecomendacion">
+                     <fieldset>
+                        <legend>¿Nos recomendarías a otras personas?</legend>
+                        <div class="radioGroup">
+                           <div class="radioContainer">
+                              <!-- recom-si -->
+                              <input type="radio" id="recom-si" name="recomendarias" value="Sí" required />
+                              <label for="recom-si">Sí</label>
+                           </div>
+                           <div class="radioContainer">
+                              <!-- recom-no -->
+                              <input type="radio" id="recom-no" name="recomendarias" value="No" />
+                              <label for="recom-no">No</label>
+                           </div>
+                        </div>
+                     </fieldset>
+                  </div>
+                  <div class="halfGroup" id="formFecha">
+                     <!-- fecha -->
+                     <label for="fecha">¿Cuándo usaste el servicio?</label>
+                     <input type="date" id="fecha" name="fecha" required />
+                  </div>
+               </fieldset>
+               <fieldset class="formGroup novedades half">
+                  <div class="halfGroup" id="formNovedadess">
+                     <label for="novedades">Deseo recibir novedades y promociones</label>
+                     <!-- novedades -->
+                     <input type="checkbox" id="novedades" name="novedades" />
+                  </div>
+                  <div class="halfGroup" id="formBtn">
+                     <div class="formBtnContainer">
+                        <button class="btn" type="button" id="btnForm">
+                           Enviar encuesta
+                        </button>
+                     </div>
+                  </div>
+               </fieldset>
+            </form>
          </div>
-      </footer>
-   </body>
+      </section>
+   </main>
+   <footer class="footer wrap">
+      <div class="container">
+         <!-- Aria-label para accesibilidad -->
+         <nav class="footerNav" aria-label="Navegación secundaria">
+            <h2>Navegación</h2>
+            <ul>
+               <li><a href="./shop">Shop</a></li>
+               <li><a href="./guia-talles">Guía de Talles</a></li>
+               <li><a href="./contacto">Contacto</a></li>
+               <li><a href="./preguntas-frecuentes">Preguntas Frecuentes</a></li>
+            </ul>
+         </nav>
+         <div class="footerContact">
+            <h2>Contáctanos</h2>
+            <!-- Contenido de ejemplo (ajusta según necesidades) -->
+            <p>
+               Email: <a href="mailto:info@mmartinez.com">info@mmartinez.com</a>
+            </p>
+            <p>Teléfono: <a href="tel:+123456789">+123 456 789</a></p>
+         </div>
+         <div class="footerSocial">
+            <h2>Redes sociales</h2>
+
+            <ul>
+               <li>
+                  <a href="https://www.instagram.com/mmartinez" target="_blank" rel="noopener">Instagram</a>
+               </li>
+               <li>
+                  <a href="https://www.facebook.com/mmartinez" target="_blank" rel="noopener">Facebook</a>
+               </li>
+               <li>
+                  <a href="https://www.twitter.com/mmartinez" target="_blank" rel="noopener">Twitter</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </footer>
+</body>
+
 </html>

@@ -11,6 +11,7 @@ a {
 }
 
 textarea {
+  padding: 1em;
   resize: vertical;
 }
 
@@ -338,16 +339,15 @@ legend {
   padding-bottom: 0.5em;
 }
 
-.formFeedback{
-    display: none;
-    transition: .5s;
+.formFeedback {
+  display: none;
+  transition: 0.5s;
 }
 
-.formFeedback.incorrecto{
-   
-    display: block;
-    font-size: .8em;
-    color: #bb2929;
+.formFeedback.incorrecto {
+  display: block;
+  font-size: 0.8em;
+  color: #bb2929;
 }
 
 .halfGroup.correcto > input :focus {
@@ -364,6 +364,6 @@ legend {
 .halfGroup.incorrecto > .labelContainer > label {
   color: #bb2929;
 }
-.halfGroup.incorrecto> input {
+.halfGroup.incorrecto > input {
   border: 3px solid #bb2929;
 }
