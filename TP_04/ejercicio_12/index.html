@@ -41,66 +41,63 @@
          <div class="formContainer">
             <!-- <h2>Encuesta de Satisfacción - Atención al Cliente</h2> -->
             <form class="formSatisfaccion" action="/enviar-encuesta" method="POST" id="form">
+               <!-- Nombre (ya tiene formFeedback, sin cambios) -->
                <fieldset class="formGroup half">
                   <div class="halfGroup" id="formNombre">
-                     <!-- nombre -->
                      <div class="labelContainer">
                         <label for="nombre">Nombre</label>
-                        <p class="formFeedback">
-                           el nombre tiene que tener mas de 2 digitos y usar solo
-                           letras
-                        </p>
+                        <p class="formFeedback">El nombre debe tener más de 2 caracteres y usar solo letras</p>
                      </div>
                      <input type="text" id="nombre" name="nombre" required />
                   </div>
                   <div class="halfGroup" id="formEmail">
                      <div class="labelContainer">
                         <label for="email">Email</label>
-                        <p class="formFeedback">formato de mail incorrecto</p>
+                        <p class="formFeedback">Formato de email incorrecto</p>
                      </div>
                      <input type="email" id="email" name="email" required />
                   </div>
                </fieldset>
+               <!-- Edad (ya tiene formFeedback, sin cambios) -->
                <fieldset class="formGroup half">
                   <div class="halfGroup" id="formEdad">
-                     <!-- edad -->
                      <div class="labelContainer">
                         <label for="edad">Edad</label>
-                        <p class="formFeedback">
-                           solo digitos numericos menores a 120
-                        </p>
+                        <p class="formFeedback">Solo dígitos numéricos menores a 120</p>
                      </div>
                      <input type="number" id="edad" name="edad" min="12" max="100" required />
                   </div>
+                  <!-- Género (añadir formFeedback) -->
                   <div class="halfGroup" id="formGenero">
                      <fieldset>
                         <legend>Género</legend>
+                        <div class="labelContainer">
+                           <p class="formFeedback">Debes seleccionar un género</p>
+                        </div>
                         <div class="radioGroup">
                            <div class="radioContainer">
-                              <!-- genero -->
                               <input type="radio" id="masculino" name="genero" value="Masculino" required />
                               <label for="masculino">Masculino</label>
                            </div>
                            <div class="radioContainer">
-                              <!-- genero 2 -->
-                              <input type="radio" id="femenino" name="genero" value="Femenino" />
+                              <input type="radio" id="femenino" name="genero" value="Femenino" required />
                               <label for="femenino">Femenino</label>
                            </div>
                            <div class="radioContainer">
-                              <!-- genero 3 -->
-                              <input type="radio" id="otro" name="genero" value="Otro" />
+                              <input type="radio" id="otro" name="genero" value="Otro" required />
                               <label for="otro">Otro</label>
                            </div>
                         </div>
                      </fieldset>
                   </div>
                </fieldset>
+               <!-- Satisfacción (añadir formFeedback) -->
                <fieldset class="formGroup half">
                   <div class="halfGroup" id="formSatisfaccion">
                      <div class="labelContainer">
                         <label for="satisfaccion">Nivel de satisfacción con el servicio:</label>
+                        <p class="formFeedback">Debes seleccionar un nivel de satisfacción</p>
                      </div>
-                     <!-- satisfaccion -->
                      <select id="satisfaccion" name="satisfaccion" required>
                         <option disabled selected value="">Seleccionar</option>
                         <option value="Muy satisfecho">Muy satisfecho</option>
@@ -108,24 +105,23 @@
                         <option value="Insatisfecho">Insatisfecho</option>
                      </select>
                   </div>
+                  <!-- Características (añadir formFeedback, opcional) -->
                   <div class="halfGroup" id="formCaracteristicas">
                      <fieldset>
-                        <legend>
-                           ¿Qué características te gustaron más del servicio?
-                        </legend>
+                        <legend>¿Qué características te gustaron más del servicio?</legend>
+                        <div class="labelContainer">
+                           <p class="formFeedback">Debes seleccionar al menos una característica</p>
+                        </div>
                         <div class="radioGroup">
                            <div class="radioContainer">
-                              <!-- rapidez -->
                               <input type="checkbox" id="rapidez" name="caracteristicas[]" value="Rapidez" />
                               <label for="rapidez">Rapidez en la respuesta</label>
                            </div>
                            <div class="radioContainer">
-                              <!-- amabilidad -->
                               <input type="checkbox" id="amabilidad" name="caracteristicas[]" value="Amabilidad" />
                               <label for="amabilidad">Amabilidad del personal</label>
                            </div>
                            <div class="radioContainer">
-                              <!-- resolucion -->
                               <input type="checkbox" id="resolucion" name="caracteristicas[]" value="Resolución" />
                               <label for="resolucion">Resolución efectiva del problema</label>
                            </div>
@@ -133,52 +129,55 @@
                      </fieldset>
                   </div>
                </fieldset>
-               <div class="formGroup">
-                  <div class="labelContainer">
-                     <label for="comentarios">Comentarios adicionales</label>
-                  </div>
-                  <!-- comentarios -->
-                  <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="opcional"></textarea>
-               </div>
+               <!-- Recomendación (añadir formFeedback) -->
                <fieldset class="formGroup half">
                   <div class="halfGroup" id="formRecomendacion">
                      <fieldset>
                         <legend>¿Nos recomendarías a otras personas?</legend>
+                        <div class="labelContainer">
+                           <p class="formFeedback">Debes indicar si nos recomendarías</p>
+                        </div>
                         <div class="radioGroup">
                            <div class="radioContainer">
-                              <!-- recom-si -->
                               <input type="radio" id="recom-si" name="recomendarias" value="Sí" required />
                               <label for="recom-si">Sí</label>
                            </div>
                            <div class="radioContainer">
-                              <!-- recom-no -->
                               <input type="radio" id="recom-no" name="recomendarias" value="No" />
                               <label for="recom-no">No</label>
                            </div>
                         </div>
                      </fieldset>
                   </div>
+                  <!-- Fecha (añadir formFeedback) -->
                   <div class="halfGroup" id="formFecha">
-                     <!-- fecha -->
-                     <label for="fecha">¿Cuándo usaste el servicio?</label>
+                     <div class="labelContainer">
+                        <label for="fecha">¿Cuándo usaste el servicio?</label>
+                        <p class="formFeedback">La fecha no es válida</p>
+                     </div>
                      <input type="date" id="fecha" name="fecha" required />
                   </div>
                </fieldset>
+               <!-- Resto del formulario sin cambios -->
+               <div class="formGroup">
+                  <div class="labelContainer">
+                     <label for="comentarios">Comentarios adicionales</label>
+                  </div>
+                  <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="opcional"></textarea>
+               </div>
                <fieldset class="formGroup novedades half">
                   <div class="halfGroup" id="formNovedadess">
                      <label for="novedades">Deseo recibir novedades y promociones</label>
-                     <!-- novedades -->
                      <input type="checkbox" id="novedades" name="novedades" />
                   </div>
                   <div class="halfGroup" id="formBtn">
                      <div class="formBtnContainer">
-                        <button class="btn" type="button" id="btnForm">
-                           Enviar encuesta
-                        </button>
+                        <button class="btn" type="button" id="btnForm">Enviar encuesta</button>
                      </div>
                   </div>
                </fieldset>
             </form>
+         
          </div>
       </section>
    </main>
