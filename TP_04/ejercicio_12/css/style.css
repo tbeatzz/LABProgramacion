@@ -354,17 +354,24 @@ legend {
   border: 2px solid rgb(0, 0, 0);
 }
 
-.halfGroup.correcto > .labelContainer > label {
+.halfGroup.correcto > .labelContainer > label, .halfGroup.correcto > .labelContainer > legend {
   color: green;
 }
 .halfGroup.correcto > input {
   border: 3px solid green;
 }
 
-.halfGroup.incorrecto > .labelContainer > label {
+.halfGroup.incorrecto > .labelContainer > label, .halfGroup.incorrecto > .labelContainer > legend {
   color: #bb2929;
 }
 .halfGroup.incorrecto > input {
   border: 3px solid #bb2929;
 }
 
+#jsonOutput {
+ 
+    padding: 1em;
+  
+    font-family: monospace;
+    white-space: pre-wrap;
+}

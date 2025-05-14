@@ -69,11 +69,11 @@
                   </div>
                   <!-- Género (añadir formFeedback) -->
                   <div class="halfGroup" id="formGenero">
-                     <fieldset>
+                     <div class="labelContainer">
                         <legend>Género</legend>
-                        <div class="labelContainer">
-                           <p class="formFeedback">Debes seleccionar un género</p>
-                        </div>
+                        <p class="formFeedback">Debes seleccionar un género</p>
+                     </div>
+                     <fieldset>
                         <div class="radioGroup">
                            <div class="radioContainer">
                               <input type="radio" id="masculino" name="genero" value="Masculino" required />
@@ -107,11 +107,13 @@
                   </div>
                   <!-- Características (añadir formFeedback, opcional) -->
                   <div class="halfGroup" id="formCaracteristicas">
-                     <fieldset>
+                     
+                        
+                     <div class="labelContainer">
                         <legend>¿Qué características te gustaron más del servicio?</legend>
-                        <div class="labelContainer">
-                           <p class="formFeedback">Debes seleccionar al menos una característica</p>
-                        </div>
+                        <p class="formFeedback">Debes seleccionar al menos una característica</p>
+                     </div>
+                     <fieldset>
                         <div class="radioGroup">
                            <div class="radioContainer">
                               <input type="checkbox" id="rapidez" name="caracteristicas[]" value="Rapidez" />
@@ -132,11 +134,11 @@
                <!-- Recomendación (añadir formFeedback) -->
                <fieldset class="formGroup half">
                   <div class="halfGroup" id="formRecomendacion">
-                     <fieldset>
+                     <div class="labelContainer">
                         <legend>¿Nos recomendarías a otras personas?</legend>
-                        <div class="labelContainer">
-                           <p class="formFeedback">Debes indicar si nos recomendarías</p>
-                        </div>
+                        <p class="formFeedback">Debes indicar si nos recomendarías</p>
+                     </div>
+                     <fieldset>
                         <div class="radioGroup">
                            <div class="radioContainer">
                               <input type="radio" id="recom-si" name="recomendarias" value="Sí" required />
@@ -165,6 +167,7 @@
                   </div>
                   <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="opcional"></textarea>
                </div>
+
                <fieldset class="formGroup novedades half">
                   <div class="halfGroup" id="formNovedadess">
                      <label for="novedades">Deseo recibir novedades y promociones</label>
@@ -176,6 +179,9 @@
                      </div>
                   </div>
                </fieldset>
+
+               <!-- Elemento para mostrar el JSON -->
+               <pre id="jsonOutput"></pre>
             </form>
          
          </div>

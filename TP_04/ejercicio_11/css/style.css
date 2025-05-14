@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "Archivo", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+} 
+
+body{
+    background-color: whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container{
+    width: 100%;
+    max-width: 900px;
+    padding: 1em;
+}
+
+.formTitulo{
+    font-size: 2em;
+    font-weight: 800;
+    text-align: center;
+}
+
+#matricesForm{
+    padding: 1em;
+}
+
+.formGroupContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+}
+.labelFormContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 0;
+}
+.labelFormContainer > p{
+    display: none;
+    font-style: italic;
+    font-size: .9em;
+}
+.labelFormContainer > p.error{
+    display:initial;
+    color: rgb(173, 5, 5);
+}
+.labelFormContainer > p.correcto{
+    color: rgb(7, 143, 13);
+}
+.labelFormContainer > label{
+    font-weight: 600;
+    font-style: italic;
+}
+.formGroup{
+    display: flex;
+    flex-direction: row;
+    border: 0;
+    gap: 1em;
+}
+.formGroup > input{
+    width: 100%;
+    border: 1px solid rgb(189, 189, 189);
+    height: 4em;
+    border-radius: .5em;
+    padding: 1em;
+}
+.formGroup > input.error{
+    border: 2px solid rgb(179, 3, 3);
+}
+.formGroup > input.correcto{
+    border: 2px solid rgb(7, 143, 13);
+}
+.btnsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.btn{
+    padding: 1em;
+    font-size: 1.1em;
+    text-align: center;
+    font-weight: 700;
+    border-radius: .5em;
+    border: 1px solid rgb(189, 189, 189);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover{
+    background-color: #212121;
+    color: white;
+}
+
+.btn[disabled]{
+    cursor: not-allowed;
+    
+}
+.btn[disabled]:hover{
+    background-color: transparent;
+    color: black;
+    opacity: 0.2;
+}
+
+.formError{
+    text-align: center;
+    padding: 1em 0;
+    color: rgb(173, 5, 5);
+    font-weight: 800;
+}
+
+.formMatrices{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.formMatrices > span{
+    margin-top: 2em;
+    font-size: 1.6em;
+}
+
+.span.oculto{
+    display: none;
+}
+.span.mostrar{
+    display:initial;
+}
+.containerMatriz > h3{
+    padding: 1em 0;
+}
+.containerMatriz input{
+    width: 4em;
+    font-size: 1.3em;
+    padding: .5em;
+    border-radius: .3em;
+    border: 1px solid rgb(189, 189, 189);
+    text-align: center;
+}
+
+.containerMatriz.resultado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 0 1em;
+ 
+}

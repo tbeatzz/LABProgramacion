@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Suma de Matrices</title>
+    <meta name="description" content="Pagina para podeer calcular la suma entre matrices">
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <script defer src="./js/scripts.js"></script>
+</head>
+<body>
+    <main class="container">
+        <h1 class="formTitulo">Calculadora de Suma de Matrices</h1>
+        <form action="" method="POST" id="matricesForm">
+
+            <div class="formGroupContainer" id="contmatA">
+                
+                <div class="labelFormContainer">
+                    <p>El campo debe ser un número entero mayor que 0.</p>
+                    <label for="matA">Dimensiones de la Matriz A</label>
+                </div>
+                
+                <fieldset class="formGroup">
+                    
+                    <input type="number" name="matA" id="matAFila" placeholder="Numero de filas para la matriz A">
+                    
+
+                    <input type="number" name="matA" id="matAColumna" placeholder="Numero de columnas para la matriz A">
+
+                </fieldset>
+
+                
+            </div>
+
+            <div class="formGroupContainer" >
+                <div class="labelFormContainer">
+                    <p>El campo debe ser un número entero mayor que 0.</p>
+                    <label for="matB">Dimensiones de la Matriz B</label>
+                </div>
+                <fieldset class="formGroup">
+
+                    <input type="number" name="matB" id="matBFila" placeholder="Numero de filas para la matriz B">
+                    <input type="number" name="matB" id="matBColumna" placeholder="Numero de columnas para la matriz B">
+
+                </fieldset>
+            </div>
+
+            <div class="formGroupContainer">
+                <div class="btnsContainer">
+
+                    <button class="btn generarMatriz" type="button" id="btnGenerarMatrices">Generar</button>
+                    <button class="btn calculaMatriz" type="button" id="btnCalcularSuma" disabled>Calcular</button>
+
+                </div>
+            </div>
+
+            <div id="formError" class="formError"></div>
+
+            <div class="formMatrices">
+                <div class="containerMatriz" id="matrizA">
+                    <!-- <h3>Matriz A</h3>
+                    <table>
+
+                        <tr>
+
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+
+                        </tr>
+
+                    </table> -->
+                </div>
+                <span class="span oculto">+</span>
+                <div class="containerMatriz" id="matrizB">
+                    <!-- <h3>Matriz B</h3>
+                    <table>
+
+                        <tr>
+
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+
+                        </tr>
+
+                    </table> -->
+                </div>
+            </div>
+
+            <div class="containerMatriz resultado" id="formResultado" >
+                <!-- <h3>Matriz Resultante</h3>
+                    <table>
+
+                        <tr>
+
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+                            <td><input type="number" id="" min="0"></td>
+
+                        </tr>
+
+                    </table> -->
+            </div>
+
+        </form>  
+
+    </main>
+
+    
+</body>
+</html>
