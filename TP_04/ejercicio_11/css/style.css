@@ -162,6 +162,20 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 0 1em;
+    margin-top: 1em;
  
+}
+
+@media (max-width:611px){
+    .formGroup{
+        flex-direction: column;
+    }
+}
+@media (max-width:1003px){
+    .formMatrices{
+        flex-direction: column;
+    }
+    .formMatrices > span{
+    margin-top:0;
+}
 }
