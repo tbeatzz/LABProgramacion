@@ -100,6 +100,28 @@ class Persona {
 }
 
 /**
+ * Clase que representa a un alumno, hereda de Persona (Ejercicio 7).
+ */
+class Alumno extends Persona {
+    private array $notas;
+    private array $evaluaciones;
+
+    public function __construct(string $nombre, int $edad, array $notas = [], array $evaluaciones = []) {
+        parent::__construct($nombre, $edad);
+        $this->setNotas($notas);
+        $this->evaluaciones = $evaluaciones;
+    }
+    /**
+     * Calcula el promedio de las notas del alumno 
+     * @return float Promedio de las notas, o 0 si no hay notas.
+     */
+    public function calcularPromedio(): float {
+        return promedio($this->notas);
+    }
+
+}
+
+/**
  * Agrupa personas por categorías de edad (Ejercicio 8).
  * @param array<int, Persona> $personas Lista de personas.
  * @return array<string, array<int, Persona>> Grupos de personas por categoría.
@@ -124,6 +146,8 @@ function agruparPorEdad(array $personas): array {
     
     return $grupos;
 }
+
+
 
 /**
  * Enumerado para los estados posibles de un alumno (Ejercicio 11).

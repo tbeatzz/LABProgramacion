@@ -1,0 +1,498 @@
+/**
+ * Saluda a una persona por su nombre (Ejercicio 1).
+ * @param string $nombre Nombre de la persona.
+ * @return string Mensaje de saludo o error si el nombre está vacío.
+ */
+function saludar(string $nombre): string {
+    if (empty($nombre)) {
+        return 'Debe ingresar un nombre.';
+    }
+    return "Hola, {$nombre}!";
+}
+
+/**
+ * Verifica si un número es par (Ejercicio 2).
+ * @param int $numero Número a evaluar.
+ * @return bool Verdadero si el número es par, falso en caso contrario.
+ */
+function esPar(int $numero): bool {
+    return $numero % 2 === 0;
+}
+
+/**
+ * Encuentra el mayor de tres números (Ejercicio 3).
+ * @param float $a Primer número.
+ * @param float $b Segundo número.
+ * @param float $c Tercer número.
+ * @return float El mayor de los tres números.
+ */
+function mayorDeTres(float $a, float $b, float $c): float {
+    return max($a, $b, $c);
+}
+
+/**
+ * Filtra los números pares de un arreglo (Ejercicio 4).
+ * @param array<int, int> $array Arreglo de números enteros.
+ * @return array<int, int> Arreglo con solo los números pares.
+ */
+function filtrarPares(array $array): array {
+    return array_filter($array, 'esPar');
+}
+
+/**
+ * Calcula el promedio de un arreglo de números (Ejercicio 5).
+ * @param array<int, float> $array Arreglo de números.
+ * @return float Promedio del arreglo, o 0 si está vacío.
+ * @throws InvalidArgumentException Si el arreglo contiene valores no numéricos.
+ */
+function promedio(array $array): float {
+    if (empty($array)) {
+        return 0.0;
+    }
+    foreach ($array as $valor) {
+        if (!is_numeric($valor)) {
+            throw new InvalidArgumentException('El arreglo debe contener solo valores numéricos.');
+        }
+    }
+    return array_sum($array) / count($array);
+}
+
+/**
+ * Clase que representa a una persona con nombre y edad (Ejercicio 6).
+ */
+class Persona {
+    protected string $nombre;
+    protected int $edad;
+    
+    /**
+     * @param string $nombre Nombre de la persona.
+     * @param int $edad Edad de la persona (debe ser no negativa).
+     * @throws InvalidArgumentException Si la edad es negativa o el nombre está vacío.
+     */
+    public function __construct(string $nombre, int $edad) {
+        if (empty($nombre)) {
+            throw new InvalidArgumentException('El nombre no puede estar vacío.');
+        }
+        if ($edad < 0) {
+            throw new InvalidArgumentException('La edad no puede ser negativa.');
+        }
+        $this->nombre = $nombre;
+        $this->edad = $edad;
+    }
+    
+    /**
+     * Presenta a la persona mostrando su nombre y edad.
+     * @return string Mensaje de presentación.
+     */
+    public function presentarse(): string {
+        return "Hola, soy {$this->nombre} y tengo {$this->edad} años.";
+    }
+
+    public function getNombre(): string {
+        return $this->nombre;
+    }
+
+    public function getEdad(): int {
+        return $this->edad;
+    }
+}
+
+/**
+ * Clase que representa a un alumno, hereda de Persona (Ejercicio 7, 12, 16, 17, 18).
+ */
+class Alumno extends Persona {
+    /** @var array<int, float> Lista de notas del alumno. */
+    private array $notas;
+    /** @var array<int, Evaluacion> Lista de evaluaciones del alumno. */
+    private array $evaluaciones;
+    
+    /**
+     * @param string $nombre Nombre del alumno.
+     * @param int $edad Edad del alumno.
+     * @param array<int, float> $notas Lista de notas (opcional).
+     * @param array<int, Evaluacion> $evaluaciones Lista de evaluaciones (opcional).
+     * @throws InvalidArgumentException Si las notas contienen valores no válidos.
+     */
+    public function __construct(string $nombre, int $edad, array $notas = [], array $evaluaciones = []) {
+        parent::__construct($nombre, $edad);
+        $this->setNotas($notas);
+        $this->evaluaciones = $evaluaciones;
+    }
+    
+    /**
+     * Establece las notas del alumno con validación.
+     * @param array<int, float> $notas Lista de notas.
+     * @throws InvalidArgumentException Si las notas no son válidas.
+     */
+    private function setNotas(array $notas): void {
+        foreach ($notas as $nota) {
+            if (!is_numeric($nota) || $nota < 0 || $nota > 10) {
+                throw new InvalidArgumentException('Las notas deben ser valores numéricos entre 0 y 10.');
+            }
+        }
+        $this->notas = $notas;
+    }
+    
+    /**
+     * Calcula el promedio de las notas del alumno (Ejercicio 7).
+     * @return float Promedio de las notas, o 0 si no hay notas.
+     */
+    public function calcularPromedio(): float {
+        return promedio($this->notas);
+    }
+    
+    /**
+     * Agrega una nota al alumno.
+     * @param float $nota Nota a agregar.
+     * @throws InvalidArgumentException Si la nota no es válida.
+     */
+    public function agregarNota(float $nota): void {
+        if ($nota < 0 || $nota > 10) {
+            throw new InvalidArgumentException('La nota debe estar entre 0 y 10.');
+        }
+        $this->notas[] = $nota;
+    }
+    
+    /**
+     * Obtiene el estado del alumno según su promedio (Ejercicio 12).
+     * @return EstadoAlumno Estado del alumno (Aprobado, Desaprobado, Ausente).
+     */
+    public function getEstado(): EstadoAlumno {
+        if (empty($this->notas)) {
+            return EstadoAlumno::Ausente;
+        }
+        return $this->calcularPromedio() >= 6 ? EstadoAlumno::Aprobado : EstadoAlumno::Desaprobado;
+    }
+    
+    /**
+     * Agrega una evaluación al alumno (Ejercicio 16).
+     * @param Evaluacion $evaluacion Evaluación a agregar.
+     */
+    public function agregarEvaluacion(Evaluacion $evaluacion): void {
+        $this->evaluaciones[] = $evaluacion;
+    }
+    
+    /**
+     * Devuelve las evaluaciones ordenadas por fecha (Ejercicio 17).
+     * @return array<int, Evaluacion> Evaluaciones ordenadas.
+     */
+    public function getEvaluacionesOrdenadas(): array {
+        $evaluaciones = $this->evaluaciones;
+        usort($evaluaciones, function (Evaluacion $a, Evaluacion $b): int {
+            return $a->getFecha() <=> $b->getFecha();
+        });
+        return $evaluaciones;
+    }
+    
+    /**
+     * Calcula el promedio de notas para una materia específica (Ejercicio 18).
+     * @param string $materia Materia a evaluar.
+     * @return float Promedio de las notas de la materia, o 0 si no hay evaluaciones.
+     */
+    public function promedioPorMateria(string $materia): float {
+        $notas = array_filter($this->evaluaciones, function (Evaluacion $eval) use ($materia): bool {
+            return $eval->getMateria() === $materia;
+        });
+        if (empty($notas)) {
+            return 0.0;
+        }
+        $suma = array_sum(array_map(function (Evaluacion $eval): float {
+            return $eval->getNota();
+        }, $notas));
+        return $suma / count($notas);
+    }
+
+    public function getNotas(): array {
+        return $this->notas;
+    }
+
+    public function getEvaluaciones(): array {
+        return $this->evaluaciones;
+    }
+}
+
+/**
+ * Clase que representa una evaluación con materia, nota y fecha (Ejercicio 16).
+ */
+class Evaluacion {
+    private string $materia;
+    private float $nota;
+    private DateTime $fecha;
+    
+    /**
+     * @param string $materia Nombre de la materia.
+     * @param float $nota Nota de la evaluación (0-10).
+     * @param DateTime $fecha Fecha de la evaluación.
+     * @throws InvalidArgumentException Si la nota no es válida o la materia está vacía.
+     */
+    public function __construct(string $materia, float $nota, DateTime $fecha) {
+        if (empty($materia)) {
+            throw new InvalidArgumentException('La materia no puede estar vacía.');
+        }
+        if ($nota < 0 || $nota > 10) {
+            throw new InvalidArgumentException('La nota debe estar entre 0 y 10.');
+        }
+        $this->materia = $materia;
+        $this->nota = $nota;
+        $this->fecha = $fecha;
+    }
+    
+    public function getMateria(): string {
+        return $this->materia;
+    }
+
+    public function getNota(): float {
+        return $this->nota;
+    }
+
+    public function getFecha(): DateTime {
+        return $this->fecha;
+    }
+}
+
+/**
+ * Clase que representa un curso con una lista de alumnos (Ejercicio 9, 10).
+ */
+class Curso {
+    /** @var array<int, Alumno> Lista de alumnos en el curso. */
+    private array $alumnos;
+    
+    public function __construct() {
+        $this->alumnos = [];
+    }
+    
+    /**
+     * Agrega un alumno al curso (Ejercicio 9, 10).
+     * @param Alumno $alumno Alumno a agregar.
+     * @throws InvalidArgumentException Si el objeto no es una instancia de Alumno.
+     */
+    public function agregarAlumno(Alumno $alumno): void {
+        $this->alumnos[] = $alumno;
+    }
+    
+    /**
+     * Calcula el promedio general del curso (Ejercicio 9).
+     * @return float Promedio de los promedios de los alumnos, o 0 si no hay alumnos.
+     */
+    public function calcularPromedioCurso(): float {
+        if (empty($this->alumnos)) {
+            return 0.0;
+        }
+        $sumaPromedios = array_sum(array_map(function (Alumno $alumno): float {
+            return $alumno->calcularPromedio();
+        }, $this->alumnos));
+        return $sumaPromedios / count($this->alumnos);
+    }
+    
+    /**
+     * Obtiene los alumnos con promedio mayor o igual a 6 (Ejercicio 9).
+     * @return array<int, Alumno> Lista de alumnos aprobados.
+     */
+    public function obtenerAprobados(): array {
+        return array_filter($this->alumnos, function (Alumno $alumno): bool {
+            return $alumno->calcularPromedio() >= 6;
+        });
+    }
+    
+    public function getAlumnos(): array {
+        return $this->alumnos;
+    }
+}
+
+/**
+ * Enumerado para los estados posibles de un alumno (Ejercicio 11).
+ */
+enum EstadoAlumno: string {
+    case Aprobado = 'Aprobado';
+    case Desaprobado = 'Desaprobado';
+    case Ausente = 'Ausente';
+}
+
+/**
+ * Agrupa personas por categorías de edad (Ejercicio 8).
+ * @param array<int, Persona> $personas Lista de personas.
+ * @return array<string, array<int, Persona>> Grupos de personas por categoría.
+ */
+function agruparPorEdad(array $personas): array {
+    $grupos = [
+        'niños' => [],
+        'adolescentes' => [],
+        'adultos' => []
+    ];
+    
+    foreach ($personas as $persona) {
+        $edad = $persona->getEdad();
+        if ($edad < 13) {
+            $grupos['niños'][] = $persona;
+        } elseif ($edad >= 13 && $edad <= 17) {
+            $grupos['adolescentes'][] = $persona;
+        } else {
+            $grupos['adultos'][] = $persona;
+        }
+    }
+    
+    return $grupos;
+}
+
+/**
+ * Clase que gestiona una colección de alumnos (Ejercicio 13, 14, 15).
+ */
+class RepositorioAlumnos {
+    /** @var array<int, Alumno> Lista de alumnos. */
+    private array $alumnos;
+    
+    public function __construct() {
+        $this->alumnos = [];
+    }
+    
+    /**
+     * Guarda un alumno en el repositorio (Ejercicio 13).
+     * @param Alumno $alumno Alumno a guardar.
+     */
+    public function guardar(Alumno $alumno): void {
+        $this->alumnos[] = $alumno;
+    }
+    
+    /**
+     * Busca alumnos por nombre (Ejercicio 13).
+     * @param string $nombre Nombre a buscar.
+     * @return array<int, Alumno> Lista de alumnos encontrados.
+     */
+    public function buscarPorNombre(string $nombre): array {
+        return array_filter($this->alumnos, function (Alumno $alumno) use ($nombre): bool {
+            return $alumno->getNombre() === $nombre;
+        });
+    }
+    
+    /**
+     * Lista todos los alumnos (Ejercicio 13).
+     * @return array<int, Alumno> Lista de alumnos.
+     */
+    public function listar(): array {
+        return $this->alumnos;
+    }
+    
+    /**
+     * Guarda los datos de los alumnos en un archivo JSON (Ejercicio 14).
+     * @param string $archivo Ruta del archivo JSON.
+     * @throws RuntimeException Si no se puede escribir el archivo.
+     */
+    public function guardarEnJson(string $archivo): void {
+        $data = array_map(function (Alumno $alumno): array {
+            return [
+                'nombre' => $alumno->getNombre(),
+                'edad' => $alumno->getEdad(),
+                'notas' => $alumno->getNotas(),
+                'evaluaciones' => array_map(function (Evaluacion $evaluacion): array {
+                    return [
+                        'materia' => $evaluacion->getMateria(),
+                        'nota' => $evaluacion->getNota(),
+                        'fecha' => $evaluacion->getFecha()->format('Y-m-d')
+                    ];
+                }, $alumno->getEvaluaciones())
+            ];
+        }, $this->alumnos);
+        
+        if (file_put_contents($archivo, json_encode($data, JSON_PRETTY_PRINT)) === false) {
+            throw new RuntimeException("No se pudo escribir en el archivo $archivo.");
+        }
+    }
+    
+    /**
+     * Carga los datos de los alumnos desde un archivo JSON (Ejercicio 15).
+     * @param string $archivo Ruta del archivo JSON.
+     * @throws RuntimeException Si el archivo no existe o no es válido.
+     */
+    public function cargarDesdeJson(string $archivo): void {
+        if (!file_exists($archivo)) {
+            throw new RuntimeException("El archivo $archivo no existe.");
+        }
+        
+        $data = json_decode(file_get_contents($archivo), true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new RuntimeException('Error al decodificar el archivo JSON: ' . json_last_error_msg());
+        }
+        
+        $this->alumnos = [];
+        foreach ($data as $item) {
+            $evaluaciones = array_map(function (array $eval): Evaluacion {
+                return new Evaluacion(
+                    $eval['materia'],
+                    (float)$eval['nota'],
+                    new DateTime($eval['fecha'])
+                );
+            }, $item['evaluaciones'] ?? []);
+            
+            $this->alumnos[] = new Alumno(
+                $item['nombre'],
+                (int)$item['edad'],
+                $item['notas'] ?? [],
+                $evaluaciones
+            );
+        }
+    }
+}
+
+/**
+ * Clase que genera un reporte del curso (Ejercicio 19, 20).
+ */
+class ReporteCurso {
+    private Curso $curso;
+    
+    /**
+     * @param Curso $curso Curso a reportar.
+     */
+    public function __construct(Curso $curso) {
+        $this->curso = $curso;
+    }
+    
+    /**
+     * Genera un resumen del curso (Ejercicio 19).
+     * @return array<string, mixed> Resumen con total de alumnos, promedio general y aprobados por materia.
+     */
+    public function generarResumen(): array {
+        $alumnos = $this->curso->getAlumnos();
+        $totalAlumnos = count($alumnos);
+        $promedioGeneral = $this->curso->calcularPromedioCurso();
+        
+        $aprobadosPorMateria = [];
+        foreach ($alumnos as $alumno) {
+            foreach ($alumno->getEvaluaciones() as $eval) {
+                $materia = $eval->getMateria();
+                if (!isset($aprobadosPorMateria[$materia])) {
+                    $aprobadosPorMateria[$materia] = 0;
+                }
+                if ($alumno->promedioPorMateria($materia) >= 6) {
+                    $aprobadosPorMateria[$materia]++;
+                }
+            }
+        }
+        
+        return [
+            'total_alumnos' => $totalAlumnos,
+            'promedio_general' => $promedioGeneral,
+            'aprobados_por_materia' => $aprobadosPorMateria
+        ];
+    }
+    
+    /**
+     * Exporta el resumen del curso a un archivo de texto (Ejercicio 20).
+     * @param string $archivo Ruta del archivo de texto.
+     * @throws RuntimeException Si no se puede escribir el archivo.
+     */
+    public function exportarAArchivo(string $archivo): void {
+        $resumen = $this->generarResumen();
+        $contenido = "Reporte del Curso\n";
+        $contenido .= "================\n";
+        $contenido .= "Total de alumnos: {$resumen['total_alumnos']}\n";
+        $contenido .= "Promedio general: " . number_format($resumen['promedio_general'], 2) . "\n";
+        $contenido .= "Alumnos aprobados por materia:\n";
+        foreach ($resumen['aprobados_por_materia'] as $materia => $cantidad) {
+            $contenido .= "- $materia: $cantidad\n";
+        }
+        
+        if (file_put_contents($archivo, $contenido) === false) {
+            throw new RuntimeException("No se pudo escribir en el archivo $archivo.");
+        }
+    }
+}
