@@ -253,7 +253,7 @@ section{
         padding: 1em;
         display: flex;
         background-color: var(--secundario);
-        top: 6.5%;
+        top: 8%;
     }
 }
 
@@ -268,12 +268,12 @@ section{
 
 @media (max-width:535px){
     .navUl.show{
-        top: 9%;
+        top: 12%;
     }
 }
 
 @media (max-width:399px){
     .navUl.show{
-        top: 13%;
+        top: 16%;
     }
 }

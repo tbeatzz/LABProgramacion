@@ -3,6 +3,7 @@
 require_once 'tp_05_php_titos_alan.php';
 
 // Variable para almacenar un objeto Alumno (para ejercicios 6 y 7)
+
 $alumno = null;
 ?>
 <!DOCTYPE html>
@@ -278,6 +279,317 @@ $alumno = null;
                             echo "<p>Promedio de notas: " . $alumno->calcularPromedio() . "</p>";
                         }
                     ?>
+                </div>
+            </div>
+        </section>
+
+        <section id="ejercicio8">
+            <div class="ejercicioTitle">
+                <h1>Ejercicio 8 - Agrupar personas por edad</h1>
+                <p>Crear una función que agrupe personas en tres categorías: niños (&lt;13), adolescentes (13-17) y adultos (18+).</p>
+            </div>
+            <div class="ejercicioContainer">
+                <form action="index.php#ejercicio8" method="post">
+                    <div class="formInput">
+                        <label for="nombrePersona">Nombre</label>
+                        <input type="text" id="nombrePersona" name="nombrePersona" placeholder="Ingrese el nombre" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="edadPersona">Edad</label>
+                        <input type="number" id="edadPersona" name="edadPersona" placeholder="Ingrese una edad" required>
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="agregarPersona" value="Agregar Persona">
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="agruparPorEdad" value="Agrupar por Edad">
+                    </div>
+                </form>
+                <div class="ejercicioResultado">
+                    <h2>Resultado</h2>
+                 
+                </div>
+            </div>
+        </section>
+
+        <section id="ejercicio9">
+            <div class="ejercicioTitle">
+                <h1>Ejercicio 9 - Clase Curso</h1>
+                <p>Crear una clase Curso con una lista de alumnos y métodos para agregar alumnos, calcular promedio del curso, y obtener lista de alumnos aprobados (promedio >= 6).</p>
+            </div>
+            <div class="ejercicioContainer">
+                <form action="index.php#ejercicio9" method="post">
+                    <div class="formInput">
+                        <label for="nombreCurso">Nombre del Curso</label>
+                        <input type="text" id="nombreCurso" name="nombreCurso" placeholder="Ingrese el nombre del curso" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="nombreAlumno">Nombre del Alumno</label>
+                        <input type="text" id="nombreAlumno" name="nombreAlumno" placeholder="Ingrese el nombre del alumno" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="edadAlumno">Edad</label>
+                        <input type="number" id="edadAlumno" name="edadAlumno" placeholder="Ingrese una edad" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="notasAlumno">Notas (separadas por comas)</label>
+                        <input type="text" id="notasAlumno" name="notasAlumno" placeholder="Ej: 7,8,9">
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="agregarAlumnoCurso" value="Agregar Alumno">
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="calcularPromedioCurso" value="Calcular Promedio del Curso">
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="listarAprobados" value="Listar Alumnos Aprobados">
+                    </div>
+                </form>
+                <div class="ejercicioResultado">
+                    <h2>Resultado</h2>
+                    <!-- PHP output would go here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="ejercicio10">
+            <div class="ejercicioTitle">
+                <h1>Ejercicio 10 - Validación de tipo con excepciones</h1>
+                <p>Modificar el método de agregar alumno para que lance una excepción si el objeto no es instancia de Alumno.</p>
+            </div>
+            <div class="ejercicioContainer">
+                <form action="index.php#ejercicio10" method="post">
+                    <div class="formInput">
+                        <label for="nombreCurso">Nombre del Curso</label>
+                        <input type="text" id="nombreCurso" name="nombreCurso" placeholder="Ingrese el nombre del curso" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="objeto">Objeto a agregar</label>
+                        <input type="text" id="objeto" name="objeto" placeholder="Ingrese datos del objeto" required>
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="agregarObjeto" value="Intentar Agregar">
+                    </div>
+                </form>
+                <div class="ejercicioResultado">
+                    <h2>Resultado</h2>
+                    <!-- PHP output would go here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="ejercicio11y12">
+            <div class="ejercicioTitle">
+                <h1>Ejercicio 11 y 12 - Enumerado EstadoAlumno y Estado del Alumno</h1>
+                <p>Crear un enum con los valores: Aprobado, Desaprobado, Ausente.</p>
+                <p>Modificar la clase Alumno para que devuelva un estado según su promedio: Promedio >= 6: Aprobado, Promedio < 6: Desaprobado, Sin notas: Ausente.</p>
+            </div>
+            <div class="ejercicioContainer">
+                <form action="index.php#ejercicio11y12" method="post">
+                    <div class="formInput">
+                        <label for="nombreAlumno">Nombre</label>
+                        <input type="text" id="nombreAlumno" name="nombreAlumno" placeholder="Ingrese el nombre" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="edadAlumno">Edad</label>
+                        <input type="number" id="edadAlumno" name="edadAlumno" placeholder="Ingrese una edad" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="notasAlumno">Notas (separadas por comas)</label>
+                        <input type="text" id="notasAlumno" name="notasAlumno" placeholder="Ej: 7,8,9">
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="crearAlumnoEstado" value="Crear Alumno">
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="verEstado" value="Ver Estado del Alumno">
+                    </div>
+                </form>
+                <div class="ejercicioResultado">
+                    <h2>Resultado</h2>
+                    <!-- PHP output would go here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="ejercicio13">
+            <div class="ejercicioTitle">
+                <h1>Ejercicio 13 - Repositorio de alumnos</h1>
+                <p>Crear una clase que gestione una colección de alumnos, permitiendo: guardar alumnos, buscarlos por nombre y listarlos.</p>
+            </div>
+            <div class="ejercicioContainer">
+                <form action="index.php#ejercicio13" method="post">
+                    <div class="formInput">
+                        <label for="nombreAlumno">Nombre</label>
+                        <input type="text" id="nombreAlumno" name="nombreAlumno" placeholder="Ingrese el nombre" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="edadAlumno">Edad</label>
+                        <input type="number" id="edadAlumno" name="edadAlumno" placeholder="Ingrese una edad" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="notasAlumno">Notas (separadas por comas)</label>
+                        <input type="text" id="notasAlumno" name="notasAlumno" placeholder="Ej: 7,8,9">
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="guardarAlumno" value="Guardar Alumno">
+                    </div>
+                    <div class="formInput">
+                        <label for="buscarNombre">Buscar por nombre</label>
+                        <input type="text" id="buscarNombre" name="buscarNombre" placeholder="Ingrese el nombre a buscar">
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="buscarAlumno" value="Buscar Alumno">
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="listarAlumnos" value="Listar Todos los Alumnos">
+                    </div>
+                </form>
+                <div class="ejercicioResultado">
+                    <h2>Resultado</h2>
+                    <!-- PHP output would go here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="ejercicio14y15">
+            <div class="ejercicioTitle">
+                <h1>Ejercicio 14 y 15 - Guardar y Leer datos en JSON</h1>
+                <p>Implementar la funcionalidad para guardar la información de los alumnos en un archivo JSON.</p>
+                <p>Implementar un método que cargue los datos desde el archivo JSON y reconstruya los objetos Alumno.</p>
+            </div>
+            <div class="ejercicioContainer">
+                <form action="index.php#ejercicio14y15" method="post">
+                    <div class="formInput">
+                        <label for="nombreAlumno">Nombre</label>
+                        <input type="text" id="nombreAlumno" name="nombreAlumno" placeholder="Ingrese el nombre" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="edadAlumno">Edad</label>
+                        <input type="number" id="edadAlumno" name="edadAlumno" placeholder="Ingrese una edad" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="notasAlumno">Notas (separadas por comas)</label>
+                        <input type="text" id="notasAlumno" name="notasAlumno" placeholder="Ej: 7,8,9">
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="guardarJSON" value="Guardar en JSON">
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="cargarJSON" value="Cargar desde JSON">
+                    </div>
+                </form>
+                <div class="ejercicioResultado">
+                    <h2>Resultado</h2>
+                    <!-- PHP output would go here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="ejercicio16">
+            <div class="ejercicioTitle">
+                <h1>Ejercicio 16 - Clase Evaluación</h1>
+                <p>Crear una clase con propiedades: materia, nota y fecha. Asociar evaluaciones a los alumnos.</p>
+            </div>
+            <div class="ejercicioContainer">
+                <form action="index.php#ejercicio16" method="post">
+                    <div class="formInput">
+                        <label for="nombreAlumno">Nombre del Alumno</label>
+                        <input type="text" id="nombreAlumno" name="nombreAlumno" placeholder="Ingrese el nombre" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="materia">Materia</label>
+                        <input type="text" id="materia" name="materia" placeholder="Ingrese la materia" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="nota">Nota</label>
+                        <input type="number" id="nota" name="nota" step="0.1" placeholder="Ingrese la nota" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="agregarEvaluacion" value="Agregar Evaluación">
+                    </div>
+                </form>
+                <div class="ejercicioResultado">
+                    <h2>Resultado</h2>
+                    <!-- PHP output would go here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="ejercicio17">
+            <div class="ejercicioTitle">
+                <h1>Ejercicio 17 - Historial de notas</h1>
+                <p>Agregar un método en Alumno que devuelva las evaluaciones ordenadas por fecha.</p>
+            </div>
+            <div class="ejercicioContainer">
+                <form action="index.php#ejercicio17" method="post">
+                    <div class="formInput">
+                        <label for="nombreAlumno">Nombre del Alumno</label>
+                        <input type="text" id="nombreAlumno" name="nombreAlumno" placeholder="Ingrese el nombre" required>
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="verHistorial" value="Ver Historial de Notas">
+                    </div>
+                </form>
+                <div class="ejercicioResultado">
+                    <h2>Resultado</h2>
+                    <!-- PHP output would go here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="ejercicio18">
+            <div class="ejercicioTitle">
+                <h1>Ejercicio 18 - Promedio por materia</h1>
+                <p>Crear un método que calcule el promedio de notas de una materia específica para un alumno.</p>
+            </div>
+            <div class="ejercicioContainer">
+                <form action="index.php#ejercicio18" method="post">
+                    <div class="formInput">
+                        <label for="nombreAlumno">Nombre del Alumno</label>
+                        <input type="text" id="nombreAlumno" name="nombreAlumno" placeholder="Ingrese el nombre" required>
+                    </div>
+                    <div class="formInput">
+                        <label for="materia">Materia</label>
+                        <input type="text" id="materia" name="materia" placeholder="Ingrese la materia" required>
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="calcularPromedioMateria" value="Calcular Promedio por Materia">
+                    </div>
+                </form>
+                <div class="ejercicioResultado">
+                    <h2>Resultado</h2>
+                    <!-- PHP output would go here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="ejercicio19y20">
+            <div class="ejercicioTitle">
+                <h1>Ejercicio 19 y 20 - Reporte del curso y Exportar a archivo</h1>
+                <p>Crear una clase ReporteCurso que genere un resumen con: cantidad de alumnos, promedio general, y alumnos aprobados por materia.</p>
+                <p>Escribir el resumen generado por ReporteCurso en un archivo de texto.</p>
+            </div>
+            <div class="ejercicioContainer">
+                <form action="index.php#ejercicio19y20" method="post">
+                    <div class="formInput">
+                        <label for="nombreCurso">Nombre del Curso</label>
+                        <input type="text" id="nombreCurso" name="nombreCurso" placeholder="Ingrese el nombre del curso" required>
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="generarReporte" value="Generar Reporte">
+                    </div>
+                    <div class="formBtn">
+                        <input type="submit" name="exportarReporte" value="Exportar Reporte a Archivo">
+                    </div>
+                </form>
+                <div class="ejercicioResultado">
+                    <h2>Resultado</h2>
+                    <!-- PHP output would go here -->
                 </div>
             </div>
         </section>
