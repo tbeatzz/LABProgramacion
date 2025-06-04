@@ -5,10 +5,17 @@
  * @param string $nombre Nombre de la persona.
  * @return string Mensaje de saludo o error si el nombre está vacío.
  */
-function saludar(string $nombre): string {
-    if (empty($nombre)) {
-        return 'Debe ingresar un nombre.';
+function saludar(string $nombre): string {    
+    // Validar que el nombre tenga al menos 2 caracteres
+    if (strlen($nombre) < 2) {
+        return 'El nombre debe tener al menos 2 caracteres.';
     }
+    
+    // Validar que el nombre no contenga números
+    if (preg_match('/[0-9]/', $nombre)) {
+        return 'El nombre no puede contener números.';
+    }
+    
     return "Hola, {$nombre}!";
 }
 
@@ -48,12 +55,12 @@ function filtrarPares(array $array): array {
  * @throws InvalidArgumentException Si el arreglo contiene valores no numéricos.
  */
 function promedio(array $array): float {
-    if (empty($array)) {
-        return 0.0;
-    }
+    // if (empty($array)) {
+    //     return 0.0;
+    // }
     foreach ($array as $valor) {
         if (!is_numeric($valor)) {
-            throw new InvalidArgumentException('El arreglo debe contener solo valores numéricos.');
+            return('El arreglo debe contener solo valores numéricos y sin espacios.');
         }
     }
     return array_sum($array) / count($array);
@@ -106,10 +113,9 @@ class Alumno extends Persona {
     private array $notas;
     private array $evaluaciones;
 
-    public function __construct(string $nombre, int $edad, array $notas = [], array $evaluaciones = []) {
+    public function __construct(string $nombre, int $edad, array $notas = []) {
         parent::__construct($nombre, $edad);
         $this->setNotas($notas);
-        $this->evaluaciones = $evaluaciones;
     }
     /**
      * Calcula el promedio de las notas del alumno 
@@ -118,6 +124,29 @@ class Alumno extends Persona {
     public function calcularPromedio(): float {
         return promedio($this->notas);
     }
+
+    /**
+     * Returnoa las notas del alumno 
+     * @return $notas lista con las notas del alumno.
+     */
+    public function getNotas(): array {
+        return $this->notas;
+    }
+
+    /**
+     * Establece las notas del alumno con validación.
+     * @param array $notas Lista de notas.
+     */
+    private function setNotas(array $notas): void {
+        foreach ($notas as $nota) {
+            if (!is_numeric($nota) || $nota < 0 || $nota > 10) {
+                throw new InvalidArgumentException('Las notas deben ser valores numéricos entre 0 y 10.');
+            }
+        }
+        $this->notas = $notas;
+    }
+
+    
 
 }
 
