@@ -1,0 +1,124 @@
+[
+    {
+        "nombre": "Titos Alan",
+        "edad": 21,
+        "notas": [
+            8.2,
+            6.7,
+            9,
+            8,
+            8
+        ],
+        "evaluaciones": [
+            {
+                "materia": "Laboratorio de programacion",
+                "nota": 8.2,
+                "fecha": "2025-04-28"
+            },
+            {
+                "materia": "Laboratorio de programacion",
+                "nota": 6.7,
+                "fecha": "2025-05-28"
+            },
+            {
+                "materia": "Validacion y verificacion de software",
+                "nota": 9,
+                "fecha": "2025-05-01"
+            },
+            {
+                "materia": "Validacion y verificacion de software",
+                "nota": 8,
+                "fecha": "2025-05-29"
+            },
+            {
+                "materia": "Gestion de proyectos de software",
+                "nota": 8,
+                "fecha": "2025-05-16"
+            }
+        ]
+    },
+    {
+        "nombre": "Lucía Gómez",
+        "edad": 20,
+        "notas": [
+            7.5,
+            6.8,
+            8.3
+        ],
+        "evaluaciones": [
+            {
+                "materia": "Laboratorio de programacion",
+                "nota": 7.5,
+                "fecha": "2025-04-30"
+            },
+            {
+                "materia": "probabilidad y estadistica",
+                "nota": 6.8,
+                "fecha": "2025-05-15"
+            },
+            {
+                "materia": "Bases de Datos",
+                "nota": 8.3,
+                "fecha": "2025-06-01"
+            }
+        ]
+    },
+    {
+        "nombre": "Juan Pérez",
+        "edad": 22,
+        "notas": [
+            8.5,
+            7.0,
+            5.5,
+            9.0
+        ],
+        "evaluaciones": [
+            {
+                "materia": "Validacion y verificacion de software",
+                "nota": 8.5,
+                "fecha": "2025-05-02"
+            },
+            {
+                "materia": "Gestion de proyectos de software",
+                "nota": 7.0,
+                "fecha": "2025-05-20"
+            },
+            {
+                "materia": "probabilidad y estadistica",
+                "nota": 5.5,
+                "fecha": "2025-06-03"
+            },
+            {
+                "materia": "Bases de Datos",
+                "nota": 9.0,
+                "fecha": "2025-06-04"
+            }
+        ]
+    },
+    {
+        "nombre": "Sofía Martínez",
+        "edad": 19,
+        "notas": [
+            6.5,
+            7.8,
+            8.2
+        ],
+        "evaluaciones": [
+            {
+                "materia": "Laboratorio de programacion",
+                "nota": 6.5,
+                "fecha": "2025-05-10"
+            },
+            {
+                "materia": "Validacion y verificacion de software",
+                "nota": 7.8,
+                "fecha": "2025-05-25"
+            },
+            {
+                "materia": "Gestion de proyectos de software",
+                "nota": 8.2,
+                "fecha": "2025-06-02"
+            }
+        ]
+    }
+]

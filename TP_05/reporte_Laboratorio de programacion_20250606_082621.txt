@@ -1,0 +1,16 @@
+Reporte de la materia: Laboratorio de programacion
+Fecha: 2025-06-06 03:26:21
+
+Cantidad de alumnos: 3
+Promedio general: 7.23
+
+Alumnos aprobados:
+- Titos Alan (Promedio: 7.45)
+- Lucía Gómez (Promedio: 7.50)
+- Sofía Martínez (Promedio: 6.50)
+
+Alumnos desaprobados:
+- Ninguno
+
+Alumnos sin evaluaciones:
+- Juan Pérez
